@@ -1,0 +1,15 @@
+.cartButton {
+    position: absolute;
+    top: 10px;
+    left: 48%;
+    padding: 10px;
+    background-color: black;
+    border-radius: 50%;
+    cursor: pointer;
+
+    &:hover {
+        transition-duration: 0.3s;
+        transform: scale(1.3);
+        box-shadow: 0 0 3px black;
+    }
+}
