@@ -1,0 +1,36 @@
+.bookCard {
+	box-sizing: unset;
+	width: 300px;
+	height: 500px;
+	padding: 10px 10px;
+	border: solid white;
+	background-color: black;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	.bookHeader {
+		img {
+			width: 300px;
+			height: 400px;
+		}
+
+		h3 {
+			font-size: 19px;
+			margin-bottom: 10px;
+		}
+	}
+
+	.bookDetails {
+		display: flex;
+		justify-content: space-between;
+
+		button {
+		}
+
+		p {
+			margin-right: 10px;
+			font-size: 23px;
+		}
+	}
+}

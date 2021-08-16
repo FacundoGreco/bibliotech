@@ -1,0 +1,53 @@
+{
+	"books": [
+		{
+			"id": 0,
+			"title": "Harry Potter y la Piedra Filosofal",
+			"description": "Harry Potter y la piedra filosofal (Harry Potter and the Philosopher's Stone) es el primer libro de la serie, fue publicado en Reino Unido el 26 de junio de 1997 y en español en marzo de 1999.10​ Se trata de uno de los libros más vendidos de la historia, las estimaciones de sus ventas mundiales superan los 110 millones de copias. En la primavera de 2007, una primera edición firmada por Rowling fue subastada en Londres por 27 876 libras esterlinas. En esta primera obra se introducen la mayoría de los personajes principales de la serie, así como muchos de los lugares donde se desarrollará la acción. Se narran los primeros pasos de Harry en el mundo de la magia, así como su primer enfrentamiento con Voldemort, quien en su búsqueda de la inmortalidad quiere obtener el poder de la piedra filosofal.",
+			"price": 800,
+			"imgUrl": "https://i.ibb.co/5rrJV9J/1.jpg"
+		},
+		{
+			"id": 1,
+			"title": "Harry Potter y la Cámara Secreta",
+			"description": "Harry Potter y la cámara secreta (Harry Potter and the Chamber of Secrets) fue publicado originalmente el 2 de julio de 1998, y en español en octubre de 1999.10​ Muchos de los elementos del primer boceto de este libro fueron eliminados tanto por su autora como por el editor. Además, el libro tiene una importante relación temática con el sexto libro. Mucha de la información que iba a ser revelada en este tomo fue desplazada a la sexta entrega. Como consecuencia de esto, muchos de los elementos que aparecen en una forma cotidiana en La cámara secreta aparecen nuevamente en El misterio del príncipe con su verdadera relevancia.​ El libro relata el segundo año de Harry en Hogwarts. Un día un elfo llamado Dobby vino a casa de Harry para avisarle de que Hogwarts corría un grave peligro. Más tarde su amigo Ron, le recogerá en un coche volador y así empieza su curso en Hogwarts durante el cual aparecen mensajes en las paredes de los pasillos de la escuela que advierten que la Cámara de los Secretos ha sido abierta, seguidos de una serie de ataques a alumnos que no provienen de familias con sangre mágica. En esta entrega introducen la figura del elfo doméstico y personajes relevantes para el resto de la serie, como Lucius Malfoy, Ginny Weasley y Arthur Weasley, además de revelar un poco más del pasado de Voldemort a través de su diario personal.",
+			"price": 900,
+			"imgUrl": "https://i.ibb.co/1bYYmZs/2.jpg"
+		},
+		{
+			"id": 2,
+			"title": "Harry Potter y el Prisionero de Azkaban",
+			"description": "Harry Potter y el prisionero de Azkaban (Harry Potter and the Prisoner of Azkaban) fue publicado en inglés el 8 de julio de 1999, mientras que en español lo hizo en abril de 2000.10​ Este fue el libro que más rápido escribió Rowling, pues lo terminó en tan solo un año después de comenzar a escribirlo. Fue además acreedor del Premio Costa y del Premio Bram Stoker, entre otros, que lo ubican como uno de los libros fantásticos más laureados de los últimos años. En esta oportunidad se introducen la figura del dementor y los personajes de Remus Lupin y Sirius Black, quien al inicio de la novela escapa de la prisión de Azkaban, además de desarrollar la historia de los padres de Harry. Es el único libro de la serie en el que no aparece Voldemort.",
+			"price": 1100,
+			"imgUrl": "https://i.ibb.co/Gp800Yr/3.jpg"
+		},
+		{
+			"id": 3,
+			"title": "Harry Potter y el Cáliz de Fuego",
+			"description": "Harry Potter y el cáliz de fuego (Harry Potter and the Goblet of Fire) fue publicado en inglés el 8 de julio de 2000 y en español en marzo de 2001.10​ El tamaño del libro incrementó considerablemente respecto a los primeros tres, una idea de la que Rowling estaba al tanto desde la concepción de la novela. El título atravesó diversas modificaciones, entre las cuales se incluyeron Harry Potter y el Torneo Doomspeell, Harry Potter y el Torneo de los tres magos, hasta que la autora se inclinó por El cáliz de fuego pues recordaba al concepto de la «copa del destino», que de acuerdo a ella era el tema del libro.​ La novela fue ganadora del Premio Hugo a la mejor novela en 2001. En esta ocasión, se narra el cuarto año de Harry en Hogwarts y el misterio que rodea el ingreso involuntario de su nombre en el Torneo de los Tres Magos, en el cual es obligado a competir junto a otros tres participantes. La historia explora más a fondo el mundo mágico y termina con el resurgimiento de lord Voldemort. Previo a la publicación del libro, se generó mucha controversia y anticipación ante el anuncio de la autora de que un personaje moriría.",
+			"price": 1300,
+			"imgUrl": "https://i.ibb.co/B2QFWcy/4.jpg"
+		},
+		{
+			"id": 4,
+			"title": "Harry Potter y la Orden del Fénix",
+			"description": "Harry Potter y la Orden del Fénix (Harry Potter and the Order of the Phoenix) es con casi 900 páginas en su edición inglesa16​el libro más largo de la serie, un hecho que la propia autora considera un defecto.17​ Fue publicado mundialmente en inglés el 21 de junio de 2003, y en español el 21 de febrero de 2004.18​ La edición en español a cargo de Salamandra constó de tres versiones: una para España, otra para el cono sur y otra para Colombia, México y Estados Unidos. Esta distinción se hizo para respetar algunas particularidades del lenguaje regional. Su tirada inicial en español fue de 1 100 000 copias. En el quinto libro, Harry Potter debe enfrentarse tanto a un Voldemort resurgido como al resto del mundo mágico que se niega a creer que esto es cierto, empezando por el Ministerio de Magia. Este nombra a Dolores Umbridge como la nueva directora de Hogwarts, y junto con Luna Lovegood y Bellatrix Lestrange son los tres personajes más destacados que se introducen en esta entrega. Por otro lado, se revela una importante profecía que concierne a Harry y a Voldemort.",
+			"price": 1400,
+			"imgUrl": "https://i.ibb.co/y4FTtm3/5.jpg"
+		},
+		{
+			"id": 5,
+			"title": "Harry Potter y el Misterio del Príncipe",
+			"description": "Harry Potter y el misterio del príncipe (Harry Potter and the Half-Blood Prince) fue publicado en inglés el 16 de julio de 2005 y fue presentado por Rowling en una rueda de prensa reservada solo a niños entre 8 y 16 años.19​ Por su parte, en español fue publicado el 23 de febrero de 2006, con una tirada inicial de un millón de ejemplares.20​ Casi un año antes de su publicación original, Rowling había manifestado en su sitio web oficial su voluntad de matar a otro personaje,​ por lo que se sucedieron una serie de apuestas no oficiales en las que se barajaron las posibilidades. En esta sexta entrega, Harry se topa con un antiguo libro de texto de pociones lleno de anotaciones y recomendaciones firmadas por un misterioso príncipe. Al mismo tiempo, recibe clases particulares por el propio director del colegio, Albus Dumbledore, que le hace conocer momentos del pasado de Voldemort, para así enseñarle lo que son los horrocruxes, objetos elementales para lograr su victoria. Al final del libro, el profesor Severus Snape, cuya lealtad estuvo en duda durante toda la serie, asesina a Dumbledore. La frase Snape kills Dumbledore (Snape mata a Dumbledore) se convirtió en un fenómeno de internet que impulsó todo tipo de videos y gráficos.",
+			"price": 1500,
+			"imgUrl": "https://i.ibb.co/L1Df0d1/6.jpg"
+		},
+		{
+			"id": 6,
+			"title": "Harry Potter y las Reliquias de la Muerte",
+			"description": "La séptima novela, Harry Potter y las reliquias de la Muerte (Harry Potter and the Deathly Hallows), fue publicada en inglés el 21 de julio de 2007, cerrando la serie que duró una década. En español fue publicado el 21 de febrero de 2008, con una tirada inicial de un millón y medio de ejemplares.24​ El libro batió récords de venta, con más de 11 millones de copias vendidas en sus primeras 48 horas, solo en el Reino Unido y Estados Unidos. La marca anterior la tenía El misterio del príncipe. Esta última novela narra los acontecimientos que siguen directamente a la muerte de Dumbledore, en los que Voldemort finaliza su ascenso al poder y logra dominar el Ministerio de Magia. Harry y sus amigos deciden no asistir a su último año en Hogwarts, para salir en la búsqueda de los horrocruxes restantes. Finalmente, se lleva a cabo la batalla de Hogwarts, entre la Orden del Fénix, alumnos y profesores del colegio, por un lado, y Voldemort y los Mortífagos, por el otro. La novela finaliza con un epílogo que cuenta el futuro de los personajes supervivientes 19 años después del enfrentamiento, mostrando que cada uno de ellos ha formado sus vidas. El 23 de octubre de 2015, J. K. Rowling anunció una octava parte de la saga.",
+			"price": 1500,
+			"imgUrl": "https://i.ibb.co/x103CCh/7.jpg"
+		}
+	]
+}

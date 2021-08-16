@@ -1,16 +1,16 @@
 import Navbar from "./components/Header/Navbar";
-import ItemListContainer from "./components/Container/ItemListContainer";
+import ItemListContainer from "./components/Container/BooksListContainer";
 import "./global-styles/main.scss";
 
 function App() {
 	return (
 		<div className="App">
 			<header className={"header fixed-top"}>
-				<Navbar/>
+				<Navbar />
 			</header>
 
 			<main>
-				<ItemListContainer titleText={"Aquí estarán los productos."}/>
+				<ItemListContainer />
 			</main>
 		</div>
 	);
