@@ -50,14 +50,14 @@
 					a {
 						color: $text-color;
 						text-decoration: none;
+
+						&:hover,
+						&.active {
+							border-bottom: solid black 3px;
+						}
 					}
 				}
 			}
-		}
-
-		.nav__menu a:hover,
-		a.active {
-			text-decoration: underline;
 		}
 	}
 }

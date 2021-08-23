@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import BooksList from "./BooksList";
 import "./BooksListContainer.scss";
 
-export default function ItemListContainer() {
+export default function BooksListContainer() {
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(false);
 	const [books, setBooks] = useState([]);

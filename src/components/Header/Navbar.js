@@ -1,4 +1,5 @@
 import React from "react";
+import { Link, NavLink } from "react-router-dom";
 import CartWidget from "./CartWidget";
 import "./Navbar.scss";
 
@@ -7,9 +8,9 @@ export default function Navbar() {
 		<nav className={"nav navbar-expand-md"}>
 			{/* START NAV BRAND */}
 			<div className={"nav__brand"}>
-				<a className={"nav__logo"} href={"/index"}>
+				<Link className={"nav__logo"} exact to={"/"}>
 					<img src={"https://i.ibb.co/6n2wKTt/Biblio-Tech-logo.png"} alt={"LOGO"} />
-				</a>
+				</Link>
 				<h1 className={"nav__title"}>BiblioTech</h1>
 			</div>
 			{/* END NAV BRAND  */}
@@ -19,17 +20,20 @@ export default function Navbar() {
 				<ul className={"navbar-nav collapse navbar-collapse"} id={"collapse_target"}>
 					{/* NAVIGATION  */}
 					<li className={"nav-item"}>
-						<a className={"nav-link active"} href={"/inicio"}>
+						<NavLink className={"nav-link"} activeClassName={"active"} exact to={"/"}>
 							Inicio
-						</a>
+						</NavLink>
 					</li>
 					<li className={"nav-item"}>
-						<a className={"nav-link"} href={"/contacto"}>
+						<NavLink className={"nav-link"} activeClassName={"active"} exact to={"/contact"}>
 							Contacto
-						</a>
+						</NavLink>
 					</li>
+					<li className={"nav-item"}>Categorías</li>
 					<li className={"nav-item"}>
-						<CartWidget />
+						<Link exact to={"/cart"}>
+							<CartWidget />
+						</Link>
 					</li>
 				</ul>
 			</div>
