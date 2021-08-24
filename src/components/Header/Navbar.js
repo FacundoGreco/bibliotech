@@ -8,7 +8,7 @@ export default function Navbar() {
 		<nav className={"nav navbar-expand-md"}>
 			{/* START NAV BRAND */}
 			<div className={"nav__brand"}>
-				<Link className={"nav__logo"} exact to={"/"}>
+				<Link className={"nav__logo"} to={"/"}>
 					<img src={"https://i.ibb.co/6n2wKTt/Biblio-Tech-logo.png"} alt={"LOGO"} />
 				</Link>
 				<h1 className={"nav__title"}>BiblioTech</h1>
@@ -31,7 +31,7 @@ export default function Navbar() {
 					</li>
 					<li className={"nav-item"}>Categorías</li>
 					<li className={"nav-item"}>
-						<Link exact to={"/cart"}>
+						<Link to={"/cart"}>
 							<CartWidget />
 						</Link>
 					</li>

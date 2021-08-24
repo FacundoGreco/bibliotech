@@ -5,6 +5,7 @@ import ContactContainer from "./components/Main/ContactContainer/ContactContaine
 import CartContainer from "./components/Main/CartContainer/CartContainer.js";
 import "./global-styles/main.scss";
 import BookDetailContainer from "./components/Main/BookDetailContainer/BookDetailContainer";
+import "./model/model.js";
 
 function App() {
 	return (
