@@ -1,22 +1,25 @@
 import { db } from "./database.js";
 
-// async function getBooks(setBooks) {
-// 	try {
-// 		db.collection("books")
-// 			.orderBy("date", "asc")
-// 			.onSnapshot((querySnapshot) => {
-// 				const chatHistory = [];
+async function getBooks(setBooks, setLoading) {
+	try {
+		db.collection("books")
+			.orderBy("category", "asc")
+			.orderBy("title", "asc")
+			.onSnapshot((querySnapshot) => {
+				const books = [];
 
-// 				querySnapshot.forEach((doc) => {
-// 					chatHistory.push({ id: doc.id, ...doc.data() });
-// 				});
-// 				setBooks(chatHistory);
-// 			});
-// 	} catch (error) {
-// 		console.log(error);
-// 		throw new Error("Los mensajes no se pudieron cargar");
-// 	}
-// }
+				querySnapshot.forEach((doc) => {
+					books.push({ ...doc.data() });
+				});
+				setBooks(books);
+				setLoading(false);
+			});
+	} catch (error) {
+		console.log(error);
+		setLoading(false);
+		throw new Error("Los mensajes no se pudieron cargar");
+	}
+}
 
 // async function saveBooks(book) {
 // 	try {
@@ -27,4 +30,4 @@ import { db } from "./database.js";
 // 	}
 // }
 
-// export { getBooks, saveBooks };
+export { getBooks };

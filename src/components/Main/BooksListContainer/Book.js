@@ -6,7 +6,7 @@ export default function Book({ title, description, price, imgUrl }) {
 		<li className="bookCard">
 			<div className="bookHeader">
 				<img src={imgUrl} alt="Carátula" />
-				<h3>{title}</h3>
+				<h4>{title}</h4>
 			</div>
 
 			<div className="bookDetails">

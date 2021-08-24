@@ -1,6 +1,6 @@
 @import "/src/global-styles/operators.scss";
 
-.itemListContainer {
+.booksListContainer {
 	@include secondaryStyle();
 	@include modernContainer();
 	border-radius: 0;
@@ -10,9 +10,9 @@
 	padding: 20px 20px;
 
 	h2 {
-		padding-bottom: 5px;
+		padding: 0 0 5px 10px;
 		border-bottom: 2px solid white;
-		text-align: center;
+		// text-align: left;
 		font-size: 28px;
 	}
 }
