@@ -2,8 +2,4 @@
 
 .bookDetailsContainer {
 	@include container();
-
-	h2 {
-		@include sectionTitle();
-	}
 }
