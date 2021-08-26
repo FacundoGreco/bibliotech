@@ -4,7 +4,7 @@ import BooksListContainer from "./components/Main/BooksListContainer/BooksListCo
 import ContactContainer from "./components/Main/ContactContainer/ContactContainer.js";
 import CartContainer from "./components/Main/CartContainer/CartContainer.js";
 import "./global-styles/main.scss";
-import BookDetailContainer from "./components/Main/BookDetailContainer/BookDetailContainer";
+import BookDetailsContainer from "./components/Main/BookDetailContainer/BookDetailsContainer";
 
 function App() {
 	return (
@@ -24,8 +24,8 @@ function App() {
 							<BooksListContainer />
 						</Route>
 
-						<Route exact path="/item/:itemId">
-							<BookDetailContainer />
+						<Route exact path="/book/:bookId">
+							<BookDetailsContainer />
 						</Route>
 
 						<Route exact path="/contact">

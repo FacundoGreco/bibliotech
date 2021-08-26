@@ -1,16 +1,20 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Book.scss";
 
-export default function Book({ title, description, price, imgUrl }) {
+export default function Book({ id, title, description, price, imgUrl }) {
 	return (
 		<li className="bookCard">
-			<div className="bookHeader">
+			<div className="bookCardHeader">
 				<img src={imgUrl} alt="Carátula" />
 				<h4>{title}</h4>
 			</div>
 
-			<div className="bookDetails">
-				<button>Leer descripción</button>
+			<div className="bookCardDetails">
+				<Link to={`/book/${id}`}>
+					<button>Ver descripción</button>
+				</Link>
+
 				<p>${price}</p>
 			</div>
 		</li>

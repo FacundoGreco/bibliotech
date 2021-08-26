@@ -20,8 +20,8 @@ export default function BooksListContainer() {
 			<h2>Libros</h2>
 
 			{loading && <h3>Cargando libros...</h3>}
-			{error && <h3>No se ha encontrado ningún libro.</h3>}
-			{books && !loading && <BooksList books={books} />}
+			{error && <h3>Error al cargar libros.</h3>}
+			{!loading && books && <BooksList books={books} />}
 		</div>
 	);
 }

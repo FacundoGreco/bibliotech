@@ -25,13 +25,22 @@ $font: "Roboto Slab", serif;
 }
 
 @mixin sectionTitle() {
-	@include darkStyle();
-	font-size: 30px;
-	padding: 5px 0;
+	padding: 0 0 5px 10px;
+	border-bottom: 2px solid white;
+	font-size: 28px;
 }
 
 @mixin modernContainer {
 	text-align: left;
 	border-radius: 2%;
 	box-shadow: 0 6px 25px black;
+}
+
+@mixin container {
+	@include secondaryStyle();
+	text-align: left;
+	position: relative;
+	width: 100%;
+	min-height: 90vh;
+	padding: 20px 20px;
 }

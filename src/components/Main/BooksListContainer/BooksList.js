@@ -11,6 +11,7 @@ export default function BooksList({ books }) {
 			.filter((book) => book.category === category)
 			.map((book) => (
 				<Book
+					id={book.id}
 					title={book.title}
 					description={book.description}
 					price={book.price}
