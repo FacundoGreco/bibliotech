@@ -25,13 +25,101 @@ $font: "Roboto Slab", serif;
 }
 
 @mixin sectionTitle() {
-	@include darkStyle();
-	font-size: 30px;
-	padding: 5px 0;
+	padding: 0 0 5px 10px;
+	border-bottom: 2px solid white;
+	font-size: 28px;
 }
 
 @mixin modernContainer {
 	text-align: left;
 	border-radius: 2%;
 	box-shadow: 0 6px 25px black;
+}
+
+@mixin container {
+	@include secondaryStyle();
+	text-align: left;
+	position: relative;
+	width: 100%;
+	min-height: 90vh;
+	padding: 20px 20px;
+
+	h2 {
+		@include sectionTitle();
+	}
+}
+
+@mixin form {
+	@include primaryStyle();
+	@include modernContainer();
+	padding: 13px 10px;
+	width: 45%;
+	max-width: 500px;
+	height: 73%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+
+	h3 {
+		@include secondaryStyle();
+
+		width: 95%;
+		padding: 10px 0;
+		margin-bottom: 10px;
+		text-align: center;
+		font-size: 22px;
+	}
+
+	.inputsContainer {
+		@include secondaryStyle();
+		padding: 10px 15px;
+		width: 95%;
+		height: 70%;
+		display: flex;
+		flex-direction: column;
+		border-radius: 2%;
+
+		fieldset {
+			@include secondaryStyle();
+			border: none;
+			margin-bottom: 20px;
+
+			label,
+			input,
+			textarea {
+				@include secondaryStyle();
+				display: block;
+				width: 100%;
+			}
+
+			label {
+				font-size: 18px;
+				margin-bottom: 5px;
+			}
+
+			input,
+			textarea {
+				font-size: 15px;
+				border: solid white 1px;
+			}
+
+			input {
+				height: 30px;
+			}
+
+			textarea {
+				height: 85px;
+			}
+		}
+	}
+
+	button {
+		@include secondaryStyle();
+		margin-top: 20px;
+		width: 100px;
+		height: 40px;
+		font-size: 20px;
+		border: solid black;
+	}
 }

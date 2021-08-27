@@ -1,0 +1,5 @@
+@import "/src/global-styles/operators.scss";
+
+.booksListContainer {
+	@include container();
+}

@@ -9,23 +9,25 @@
 	flex-direction: column;
 	justify-content: space-between;
 
-	.bookHeader {
+	.bookCardHeader {
 		img {
 			width: 300px;
 			height: 400px;
 		}
 
-		h3 {
+		h4 {
 			font-size: 19px;
 			margin-bottom: 10px;
 		}
 	}
 
-	.bookDetails {
+	.bookCardDetails {
 		display: flex;
 		justify-content: space-between;
 
 		button {
+			padding: 5px;
+			font-size: 15px;
 		}
 
 		p {

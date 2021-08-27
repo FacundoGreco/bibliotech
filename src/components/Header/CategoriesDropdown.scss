@@ -1,0 +1,35 @@
+@import "/src/global-styles/operators.scss";
+
+.categoriesDropdown {
+	@include primaryStyle();
+	@include modernContainer();
+	visibility: hidden;
+	opacity: 0;
+	margin-left: 50px;
+	padding: 10px;
+	width: 150px;
+	position: absolute;
+	z-index: 1;
+	top: 60px;
+	transition-duration: 0.3s;
+	cursor: unset;
+
+	ul {
+		display: unset !important;
+		text-align: left;
+
+		.category {
+			display: inline-block;
+			font-size: 20px;
+			margin-bottom: 10px;
+			a:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+.opened {
+	visibility: unset;
+	opacity: 1;
+}
