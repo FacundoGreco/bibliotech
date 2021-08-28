@@ -4,7 +4,7 @@ import CartWidget from "./CartWidget";
 import CategoriesDropdown from "./CategoriesDropdown";
 import "./Navbar.scss";
 
-export default function Navbar() {
+export default function Navbar({ categories }) {
 	const [dropdownOpened, setDropdownOpened] = useState(false);
 
 	return (
@@ -41,7 +41,7 @@ export default function Navbar() {
 						>
 							Categorías
 						</li>
-						{dropdownOpened && <CategoriesDropdown />}
+						{dropdownOpened && <CategoriesDropdown categories={categories} />}
 					</div>
 					<li className="nav-item">
 						<Link to="/cart">
