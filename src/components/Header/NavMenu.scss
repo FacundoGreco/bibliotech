@@ -1,0 +1,77 @@
+@import "/src/global-styles/operators.scss";
+
+.navMenu {
+	font-size: 30px;
+	margin-right: 60px;
+
+	ul {
+		display: flex;
+		align-items: center;
+
+		.nav-item {
+			margin-left: 50px;
+			cursor: pointer;
+			a {
+				color: $text-color;
+				text-decoration: none;
+
+				&:hover,
+				&.active {
+					border-bottom: solid black 3px;
+				}
+			}
+		}
+	}
+}
+
+.navigation .categoriesDropdown {
+	margin-left: 50px;
+	top: 60px;
+}
+
+.mobileNavigation {
+	display: none;
+
+	.hamburgerButton {
+		cursor: pointer;
+	}
+
+	.navMenu {
+		@include primaryStyle();
+		@include modernContainer();
+		visibility: hidden;
+		opacity: 0;
+		transition-duration: 0.3s;
+
+		position: absolute;
+		z-index: 3;
+		top: 80px;
+		right: 0;
+		width: 100%;
+		max-width: 200px;
+		padding: 10px;
+		margin: 0;
+
+		ul {
+			flex-direction: column;
+			align-items: flex-start;
+			li {
+				margin: 5px 0;
+			}
+		}
+	}
+
+	.opened {
+		visibility: unset;
+		opacity: 1;
+	}
+}
+
+@media only screen and (max-width: 992px) {
+	.navigation {
+		display: none;
+	}
+	.mobileNavigation {
+		display: flex;
+	}
+}

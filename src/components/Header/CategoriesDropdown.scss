@@ -5,12 +5,10 @@
 	@include modernContainer();
 	visibility: hidden;
 	opacity: 0;
-	margin-left: 50px;
 	padding: 10px;
 	width: 150px;
 	position: absolute;
 	z-index: 1;
-	top: 60px;
 	transition-duration: 0.3s;
 	cursor: unset;
 
