@@ -2,6 +2,8 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	padding: 20px 5px;
+
 	h3 {
 		font-size: 25px;
 		margin-bottom: 30px;
@@ -15,8 +17,11 @@
 			background-color: black;
 			display: flex;
 			flex-direction: column;
-			width: 20%;
-			height: min-content;
+			margin-right: 30px;
+			width: 40%;
+			max-width: 300px;
+			height: 100%;
+			max-height: 500px;
 			padding: 5px;
 			border: 3px solid white;
 
@@ -48,5 +53,39 @@
 				font-size: 22px;
 			}
 		}
+	}
+}
+
+@media only screen and (min-width: 401px) and (max-width: 992px) {
+	.bookDescription p {
+		font-size: 18px !important;
+	}
+}
+
+@media only screen and (max-width: 992px) {
+	.bookDetails {
+		h3 {
+			margin: 0px 0 10px 0 !important;
+		}
+
+		.bookInfo {
+			flex-direction: column;
+			align-items: center;
+
+			.bookItemCard {
+				width: 100% !important;
+				margin: 0 0 30px 0 !important;
+			}
+
+			.bookDescription {
+				width: 100% !important;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 400px) {
+	.bookDescription p {
+		font-size: 15px !important;
 	}
 }

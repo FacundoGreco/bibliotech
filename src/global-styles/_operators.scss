@@ -47,6 +47,10 @@ $font: "Roboto Slab", serif;
 	h2 {
 		@include sectionTitle();
 	}
+
+	@media (max-width: 400px) {
+		padding: 10px 5px !important;
+	}
 }
 
 @mixin form {
