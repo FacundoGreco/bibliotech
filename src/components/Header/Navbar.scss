@@ -36,3 +36,21 @@
 		}
 	}
 }
+
+@media only screen and (max-width: 400px) {
+	.header {
+		padding: 10px 10px;
+
+		.nav__logo {
+			height: 60px !important;
+			img {
+				height: 60px !important;
+			}
+		}
+
+		.nav__title {
+			margin-left: 15px !important;
+			font-size: 34px !important;
+		}
+	}
+}
