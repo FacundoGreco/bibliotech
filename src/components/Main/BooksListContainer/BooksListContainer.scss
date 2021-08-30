@@ -3,3 +3,9 @@
 .booksListContainer {
 	@include container();
 }
+
+@media only screen and (max-width: 400px) {
+	.booksListContainer {
+		padding: 10px 5px;
+	}
+}
