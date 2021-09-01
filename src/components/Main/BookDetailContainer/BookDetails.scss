@@ -36,9 +36,20 @@
 					font-size: 15px;
 				}
 
-				p {
+				.priceAndStock {
+					display: flex;
+					flex-direction: column;
+					justify-content: space-between;
 					margin-right: 10px;
-					font-size: 23px;
+					text-align: right;
+
+					.price {
+						font-size: 23px;
+					}
+
+					.stock {
+						font-size: 13px;
+					}
 				}
 			}
 		}

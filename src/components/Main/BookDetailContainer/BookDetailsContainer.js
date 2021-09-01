@@ -45,6 +45,7 @@ export default function BookDetailsContainer() {
 					description={book.description}
 					price={book.price}
 					imgUrl={book.imgUrl}
+					stock={book.stock}
 				/>
 			)}
 		</div>

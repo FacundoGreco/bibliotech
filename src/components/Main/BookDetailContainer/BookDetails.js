@@ -2,7 +2,7 @@ import React from "react";
 import Counter from "./Counter";
 import "./BookDetails.scss";
 
-export default function BookDetails({ id, title, description, price, imgUrl }) {
+export default function BookDetails({ id, title, description, price, imgUrl, stock }) {
 	return (
 		<div className="bookDetails">
 			<h3>{title}</h3>
@@ -11,11 +11,14 @@ export default function BookDetails({ id, title, description, price, imgUrl }) {
 					<img src={imgUrl} alt="Carátula" />
 					<div className="bookItemPurchase">
 						<div className="addToCart">
-							<Counter />
+							<Counter max={stock} />
 							<button>Agregar al carrito</button>
 						</div>
 
-						<p>${price}</p>
+						<div className="priceAndStock">
+							<p className="price">${price}</p>
+							<p className="stock">{`Stock: ${stock}`}</p>
+						</div>
 					</div>
 				</div>
 				<div className="bookDescription">
