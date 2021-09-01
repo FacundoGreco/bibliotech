@@ -20,8 +20,16 @@
 
 	.itemList {
 		@include secondaryStyle();
+		padding: 20px;
 		height: 75%;
 		border-radius: 2%;
+
+		.columns {
+			display: flex;
+			justify-content: space-between;
+			margin-bottom: 30px;
+			font-size: 18px;
+		}
 	}
 
 	.cartButtons {
