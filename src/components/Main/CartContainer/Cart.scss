@@ -9,7 +9,7 @@
 	padding: 10px 15px;
 	width: 90%;
 	max-width: 700px;
-	height: 500px;
+	height: 600px;
 
 	h3 {
 		@include secondaryStyle();
@@ -20,7 +20,20 @@
 
 	.itemList {
 		@include secondaryStyle();
-		height: 85%;
+		height: 75%;
 		border-radius: 2%;
+	}
+
+	.cartButtons {
+		display: flex;
+		justify-content: space-around;
+
+		button {
+			@include secondaryStyle();
+			width: 100px;
+			height: 40px;
+			font-size: 20px;
+			border: solid black;
+		}
 	}
 }
