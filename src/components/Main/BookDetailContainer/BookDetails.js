@@ -1,14 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import Counter from "./Counter";
 import "./BookDetails.scss";
 import { useCartContext } from "../../Contexts/CartContext";
+import { Link } from "react-router-dom";
 
 export default function BookDetails({ book }) {
 	const { title, description, price, imgUrl, stock } = book;
-	const { addItem } = useCartContext();
+	const { addItem, isInCart } = useCartContext();
+
+	const [itemAdded, setItemAdded] = useState(isInCart(book.id));
 
 	const handleAddItem = (qty) => {
 		addItem(book, qty);
+		setItemAdded(true);
 	};
 
 	return (
@@ -18,9 +22,20 @@ export default function BookDetails({ book }) {
 				<div className="bookItemCard">
 					<img src={imgUrl} alt="Carátula" />
 					<div className="bookItemPurchase">
-						<div className="addToCart">
-							<Counter max={stock} handleAddItem={handleAddItem} />
-						</div>
+						{!itemAdded && (
+							<div className="addToCart">
+								<Counter max={stock} handleAddItem={handleAddItem} />
+							</div>
+						)}
+
+						{itemAdded && (
+							<div className="goToCart">
+								<p>Agregado al carrito!</p>
+								<Link to="/cart">
+									<button>Finalizar Compra</button>
+								</Link>
+							</div>
+						)}
 
 						<div className="priceAndStock">
 							<p className="price">${price}</p>
@@ -28,6 +43,7 @@ export default function BookDetails({ book }) {
 						</div>
 					</div>
 				</div>
+
 				<div className="bookDescription">
 					<h4>Descripción</h4>
 					<p>{description}</p>

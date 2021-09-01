@@ -32,7 +32,7 @@ export default function Counter({ max, handleAddItem }) {
 					handleAddItem(qty);
 				}}
 			>
-				Agregar al carrito
+				Agregar al Carrito
 			</button>
 		</>
 	);
