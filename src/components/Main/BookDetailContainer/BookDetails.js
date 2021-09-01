@@ -1,8 +1,16 @@
 import React from "react";
 import Counter from "./Counter";
 import "./BookDetails.scss";
+import { useCartContext } from "../../Contexts/CartContext";
 
-export default function BookDetails({ id, title, description, price, imgUrl, stock }) {
+export default function BookDetails({ book }) {
+	const { title, description, price, imgUrl, stock } = book;
+	const { addItem } = useCartContext();
+
+	const handleAddItem = (qty) => {
+		addItem(book, qty);
+	};
+
 	return (
 		<div className="bookDetails">
 			<h3>{title}</h3>
@@ -11,8 +19,7 @@ export default function BookDetails({ id, title, description, price, imgUrl, sto
 					<img src={imgUrl} alt="Carátula" />
 					<div className="bookItemPurchase">
 						<div className="addToCart">
-							<Counter max={stock} />
-							<button>Agregar al carrito</button>
+							<Counter max={stock} handleAddItem={handleAddItem} />
 						</div>
 
 						<div className="priceAndStock">

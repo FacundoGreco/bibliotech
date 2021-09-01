@@ -4,7 +4,7 @@ import { IoMdRemoveCircleOutline } from "react-icons/io";
 
 import "./Counter.scss";
 
-export default function Counter({ max }) {
+export default function Counter({ max, handleAddItem }) {
 	const [qty, setQty] = useState(1);
 
 	const handleSubstract = () => {
@@ -16,10 +16,24 @@ export default function Counter({ max }) {
 	};
 
 	return (
-		<div className="counterContainer">
-			<IoMdRemoveCircleOutline className="counterButton" size="40px" color="white" onClick={handleSubstract} />
-			<p>{qty}</p>
-			<IoMdAddCircleOutline className="counterButton" size="40px" color="white" onClick={handleAdd} />
-		</div>
+		<>
+			<div className="counterContainer">
+				<IoMdRemoveCircleOutline
+					className="counterButton"
+					size="40px"
+					color="white"
+					onClick={handleSubstract}
+				/>
+				<p>{qty}</p>
+				<IoMdAddCircleOutline className="counterButton" size="40px" color="white" onClick={handleAdd} />
+			</div>
+			<button
+				onClick={() => {
+					handleAddItem(qty);
+				}}
+			>
+				Agregar al carrito
+			</button>
+		</>
 	);
 }

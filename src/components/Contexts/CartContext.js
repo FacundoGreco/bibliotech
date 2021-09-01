@@ -5,10 +5,10 @@ export const CartContext = createContext();
 export const useCartContext = () => useContext(CartContext);
 
 export function CartProvider({ children }) {
-	const [cartItems, setCartItems] = useState(JSON.parse(localStorage.getItem("cartItems")));
+	const [cartItems, setCartItems] = useState(JSON.parse(localStorage.getItem("cartItems")) || []);
 
 	const isInCart = (id) => {
-		return cartItems.some((item) => item.id === id);
+		return cartItems.some((item) => item.item.id === id);
 	};
 
 	const addItem = (item, qty) => {
@@ -32,6 +32,7 @@ export function CartProvider({ children }) {
 	};
 
 	useEffect(() => {
+		console.log(cartItems);
 		localStorage.setItem("cartItems", JSON.stringify(cartItems));
 	}, [cartItems]);
 

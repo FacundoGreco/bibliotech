@@ -38,16 +38,7 @@ export default function BookDetailsContainer() {
 			{loading && <h3>Cargando libro...</h3>}
 			{!loading && notFound && <h3>No se ha encontrado ese libro.</h3>}
 			{error && <h3>Error al cargar el libro.</h3>}
-			{!loading && book && (
-				<BookDetails
-					id={book.id}
-					title={book.title}
-					description={book.description}
-					price={book.price}
-					imgUrl={book.imgUrl}
-					stock={book.stock}
-				/>
-			)}
+			{!loading && book && <BookDetails book={book} />}
 		</div>
 	);
 }
