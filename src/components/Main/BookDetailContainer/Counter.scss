@@ -1,0 +1,13 @@
+.counterContainer {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 10px;
+	p {
+		text-align: center;
+		margin: 0 !important;
+	}
+
+	.counterButton {
+		cursor: pointer;
+	}
+}

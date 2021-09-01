@@ -21,7 +21,7 @@
 			width: 40%;
 			max-width: 300px;
 			height: 100%;
-			max-height: 500px;
+			max-height: 550px;
 			padding: 5px;
 			border: 3px solid white;
 
@@ -29,6 +29,7 @@
 				margin-top: 20px;
 				display: flex;
 				justify-content: space-between;
+				align-items: center;
 
 				button {
 					padding: 5px;
@@ -85,7 +86,18 @@
 }
 
 @media only screen and (max-width: 400px) {
-	.bookDescription p {
-		font-size: 15px !important;
+	.bookDetails {
+		h3 {
+			font-size: 23px !important;
+		}
+		.bookDescription {
+			h4 {
+				font-size: 22px !important;
+			}
+
+			p {
+				font-size: 15px !important;
+			}
+		}
 	}
 }

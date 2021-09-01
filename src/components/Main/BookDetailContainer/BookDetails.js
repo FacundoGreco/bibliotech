@@ -1,4 +1,5 @@
 import React from "react";
+import Counter from "./Counter";
 import "./BookDetails.scss";
 
 export default function BookDetails({ id, title, description, price, imgUrl }) {
@@ -9,7 +10,11 @@ export default function BookDetails({ id, title, description, price, imgUrl }) {
 				<div className="bookItemCard">
 					<img src={imgUrl} alt="Carátula" />
 					<div className="bookItemPurchase">
-						<button>Agregar al carrito</button>
+						<div className="addToCart">
+							<Counter />
+							<button>Agregar al carrito</button>
+						</div>
+
 						<p>${price}</p>
 					</div>
 				</div>
