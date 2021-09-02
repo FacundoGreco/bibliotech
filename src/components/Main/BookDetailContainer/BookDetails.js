@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Counter from "./Counter";
+import DetailsCounter from "./DetailsCounter";
 import "./BookDetails.scss";
 import { useCartContext } from "../../Contexts/CartContext";
 import { Link } from "react-router-dom";
@@ -22,11 +22,7 @@ export default function BookDetails({ book }) {
 				<div className="bookItemCard">
 					<img src={imgUrl} alt="Carátula" />
 					<div className="bookItemPurchase">
-						{!itemAdded && (
-							<div className="addToCart">
-								<Counter max={stock} handleAddItem={handleAddItem} />
-							</div>
-						)}
+						{!itemAdded && <DetailsCounter max={stock} handleAddItem={handleAddItem} />}
 
 						{itemAdded && (
 							<div className="goToCart">
