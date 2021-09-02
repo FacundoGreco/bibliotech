@@ -1,11 +1,12 @@
 .item {
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 	margin-bottom: 20px;
 	text-align: center;
 
 	.titleDiv {
-		width: 40%;
+		width: 60%;
 		text-align: left;
 		h5 {
 			font-size: 16px;
@@ -15,10 +16,16 @@
 		width: 20%;
 	}
 	.removeDiv {
-		width: 20%;
+		width: 15%;
 
 		.removeButton {
 			cursor: pointer;
 		}
+	}
+}
+
+@media only screen and (max-width: 400px) {
+	.item h5 {
+		font-size: 14px !important;
 	}
 }

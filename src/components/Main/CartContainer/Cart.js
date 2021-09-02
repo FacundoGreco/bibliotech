@@ -17,7 +17,9 @@ export default function Cart() {
 				<div className="columns">
 					<h4 className="titleColumn">Título</h4>
 					<h4 className="qtyColumn">Cantidad</h4>
+					<h4 className="qtyColumnShort">Cant.</h4>
 					<h4 className="removeColumn">Eliminar</h4>
+					<h4 className="removeColumnShort">Elim.</h4>
 				</div>
 				{cartItems &&
 					cartItems.map((item) => (
