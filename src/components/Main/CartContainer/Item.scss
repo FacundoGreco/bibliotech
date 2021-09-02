@@ -2,8 +2,23 @@
 	display: flex;
 	justify-content: space-between;
 	margin-bottom: 20px;
+	text-align: center;
 
-	h5 {
-		font-size: 16px;
+	.titleDiv {
+		width: 40%;
+		text-align: left;
+		h5 {
+			font-size: 16px;
+		}
+	}
+	.qtyDiv {
+		width: 20%;
+	}
+	.removeDiv {
+		width: 20%;
+
+		.removeButton {
+			cursor: pointer;
+		}
 	}
 }

@@ -21,8 +21,8 @@ export function CartProvider({ children }) {
 	};
 
 	const removeItem = (id) => {
-		const cartCopy = [...cartItems];
-		cartCopy.filter((item) => item.id !== id);
+		let cartCopy = [...cartItems];
+		cartCopy = cartCopy.filter((item) => item.item.id !== id);
 
 		setCartItems(cartCopy);
 	};

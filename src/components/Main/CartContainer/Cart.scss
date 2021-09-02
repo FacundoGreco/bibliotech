@@ -29,6 +29,20 @@
 			justify-content: space-between;
 			margin-bottom: 30px;
 			font-size: 18px;
+			text-align: center;
+
+			.titleColumn {
+				text-align: left;
+				width: 40%;
+			}
+
+			.qtyColumn {
+				width: 20%;
+			}
+
+			.removeColumn {
+				width: 20%;
+			}
 		}
 	}
 

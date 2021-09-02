@@ -15,8 +15,9 @@ export default function Cart() {
 			<h3>Libros Agregados</h3>
 			<div className="itemList">
 				<div className="columns">
-					<h4>Título</h4>
-					<h4>Cantidad</h4>
+					<h4 className="titleColumn">Título</h4>
+					<h4 className="qtyColumn">Cantidad</h4>
+					<h4 className="removeColumn">Eliminar</h4>
 				</div>
 				{cartItems &&
 					cartItems.map((item) => (
