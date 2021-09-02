@@ -21,7 +21,13 @@ export default function Cart() {
 				</div>
 				{cartItems &&
 					cartItems.map((item) => (
-						<Item key={item.item.id} id={item.item.id} title={item.item.title} qty={item.qty} />
+						<Item
+							key={item.item.id}
+							id={item.item.id}
+							title={item.item.title}
+							stock={item.item.stock}
+							qty={item.qty}
+						/>
 					))}
 			</div>
 

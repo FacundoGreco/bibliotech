@@ -20,6 +20,13 @@ export function CartProvider({ children }) {
 		}
 	};
 
+	const updateItemQty = (id, qty) => {
+		const cartCopy = [...cartItems];
+		cartCopy.find((item) => item.item.id === id).qty = qty;
+
+		setCartItems(cartCopy);
+	};
+
 	const removeItem = (id) => {
 		let cartCopy = [...cartItems];
 		cartCopy = cartCopy.filter((item) => item.item.id !== id);
@@ -32,12 +39,11 @@ export function CartProvider({ children }) {
 	};
 
 	useEffect(() => {
-		console.log(cartItems);
 		localStorage.setItem("cartItems", JSON.stringify(cartItems));
 	}, [cartItems]);
 
 	return (
-		<CartContext.Provider value={{ cartItems, isInCart, addItem, removeItem, clearCart }}>
+		<CartContext.Provider value={{ cartItems, isInCart, addItem, updateItemQty, removeItem, clearCart }}>
 			{children}
 		</CartContext.Provider>
 	);

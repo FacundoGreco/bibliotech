@@ -1,11 +1,15 @@
 import React from "react";
 import { FiTrash } from "react-icons/fi";
+import Counter from "../Counter/Counter";
 import { useCartContext } from "../../Contexts/CartContext";
 
 import "./Item.scss";
 
-export default function Item({ id, title, qty }) {
-	const { removeItem } = useCartContext();
+export default function Item({ id, title, stock, qty }) {
+	const { updateItemQty, removeItem } = useCartContext();
+	const handleUpdateQty = (qty) => {
+		updateItemQty(id, qty);
+	};
 
 	return (
 		<div className="item">
@@ -14,7 +18,7 @@ export default function Item({ id, title, qty }) {
 			</div>
 
 			<div className="qtyDiv">
-				<p>{qty}</p>
+				<Counter max={stock} qty={qty} setQty={handleUpdateQty} />
 			</div>
 
 			<div className="removeDiv">
