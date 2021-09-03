@@ -1,6 +1,5 @@
 @import "/src/global-styles/operators.scss";
 
-/* START HEADER */
 .header {
 	@include primaryStyle();
 	z-index: 3;
@@ -35,30 +34,23 @@
 			font-family: "Lato", sans-serif;
 			font-size: 38px;
 		}
+	}
+}
 
-		.nav__menu {
-			font-size: 30px;
-			margin-right: 60px;
+@media only screen and (max-width: 400px) {
+	.header {
+		padding: 10px 10px;
 
-			ul {
-				display: flex;
-				align-items: center;
-
-				.nav-item {
-					margin-left: 50px;
-					cursor: pointer;
-					a {
-						color: $text-color;
-						text-decoration: none;
-
-						&:hover,
-						&.active {
-							border-bottom: solid black 3px;
-						}
-					}
-				}
+		.nav__logo {
+			height: 60px !important;
+			img {
+				height: 60px !important;
 			}
+		}
+
+		.nav__title {
+			margin-left: 15px !important;
+			font-size: 34px !important;
 		}
 	}
 }
-/* END HEADER */

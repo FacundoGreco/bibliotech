@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import Book from "./Book";
 import Category from "./Category";
 
-export default function BooksList({ books }) {
+export default function BooksList({ categories, books }) {
 	const { categoryId } = useParams();
 
 	const getBooksSortedByCategory = (category) => {
@@ -23,19 +23,27 @@ export default function BooksList({ books }) {
 
 	return (
 		<div className="booksList">
-			{books && (
-				<>
-					{(categoryId === "novel" || !categoryId) && (
-						<Category name="Novelas">{getBooksSortedByCategory("novel")}</Category>
-					)}
-					{(categoryId === "adventure" || !categoryId) && (
-						<Category name="Aventura">{getBooksSortedByCategory("adventure")}</Category>
-					)}
-					{(categoryId === "children" || !categoryId) && (
-						<Category name="Infantil">{getBooksSortedByCategory("children")}</Category>
-					)}
-				</>
-			)}
+			{/* Show all categories */}
+			{categories &&
+				books &&
+				!categoryId &&
+				categories.map((category) => (
+					<Category key={category.id} name={category.title}>
+						{getBooksSortedByCategory(category.id)}
+					</Category>
+				))}
+
+			{/* Show searched category */}
+			{categories &&
+				books &&
+				categoryId &&
+				categories
+					.filter((category) => category.id === categoryId)
+					.map((category) => (
+						<Category key={category.id} name={category.title}>
+							{getBooksSortedByCategory(category.id)}
+						</Category>
+					))}
 		</div>
 	);
 }

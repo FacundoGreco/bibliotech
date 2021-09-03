@@ -3,9 +3,9 @@ import BooksList from "./BooksList";
 import "./BooksListContainer.scss";
 import { getBooks } from "../../../model/model.js";
 
-export default function BooksListContainer() {
+export default function BooksListContainer({ categories, err }) {
 	const [loading, setLoading] = useState(true);
-	const [error, setError] = useState(false);
+	const [error, setError] = useState(err);
 	const [books, setBooks] = useState([]);
 
 	useEffect(() => {
@@ -21,7 +21,7 @@ export default function BooksListContainer() {
 
 			{loading && <h3>Cargando libros...</h3>}
 			{error && <h3>Error al cargar libros.</h3>}
-			{!loading && books && <BooksList books={books} />}
+			{!loading && categories && books && <BooksList categories={categories} books={books} />}
 		</div>
 	);
 }

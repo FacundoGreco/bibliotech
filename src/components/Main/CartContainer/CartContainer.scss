@@ -1,0 +1,12 @@
+@import "/src/global-styles/operators.scss";
+
+.cartContainer {
+	@include container();
+
+	.cartSection {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		min-height: 700px;
+	}
+}

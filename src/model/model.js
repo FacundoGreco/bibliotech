@@ -1,5 +1,23 @@
 import { db } from "./database.js";
 
+async function getCategories(setCategories) {
+	try {
+		db.collection("categories")
+			.orderBy("booksQty", "desc")
+			.onSnapshot((querySnapshot) => {
+				const categories = [];
+
+				querySnapshot.forEach((doc) => {
+					categories.push({ ...doc.data() });
+				});
+				setCategories(categories);
+			});
+	} catch (error) {
+		console.log(error);
+		throw new Error("Las categorías no se pudieron cargar.");
+	}
+}
+
 async function getBooks(setBooks, setLoading) {
 	try {
 		db.collection("books")
@@ -17,7 +35,7 @@ async function getBooks(setBooks, setLoading) {
 	} catch (error) {
 		console.log(error);
 		setLoading(false);
-		throw new Error("Los mensajes no se pudieron cargar");
+		throw new Error("Los mensajes no se pudieron cargar.");
 	}
 }
 
@@ -30,4 +48,4 @@ async function getBooks(setBooks, setLoading) {
 // 	}
 // }
 
-export { getBooks };
+export { getCategories, getBooks };

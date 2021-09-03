@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./CategoriesDropdown.scss";
 
-export default function CategoriesDropdown() {
+export default function CategoriesDropdown({ categories }) {
 	const [opened, setOpened] = useState("");
 
 	useEffect(() => {
@@ -14,15 +14,12 @@ export default function CategoriesDropdown() {
 	return (
 		<div className={"categoriesDropdown " + opened}>
 			<ul>
-				<li className="category">
-					<Link to="/categories/novel">Novela</Link>
-				</li>
-				<li className="category">
-					<Link to="/categories/adventure">Aventura</Link>
-				</li>
-				<li className="category">
-					<Link to="/categories/children">Infantil</Link>
-				</li>
+				{categories &&
+					categories.map((category) => (
+						<li key={category.id} className="category">
+							<Link to={`/categories/${category.id}`}>{category.title}</Link>
+						</li>
+					))}
 			</ul>
 		</div>
 	);
