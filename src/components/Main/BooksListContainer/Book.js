@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Book.scss";
 
-export default function Book({ id, title, description, price, imgUrl }) {
+export default function Book({ id, title, price, imgUrl }) {
 	return (
 		<li className="bookCard">
 			<div className="bookCardHeader">

@@ -4,7 +4,7 @@ import CartWidget from "./CartWidget";
 import CategoriesDropdown from "./CategoriesDropdown";
 import "./NavMenu.scss";
 
-export default function NavMenu({ categories }) {
+export default function NavMenu() {
 	const [dropdownOpened, setDropdownOpened] = useState(false);
 
 	return (
@@ -29,7 +29,7 @@ export default function NavMenu({ categories }) {
 				>
 					Categorías
 				</li>
-				{dropdownOpened && <CategoriesDropdown categories={categories} />}
+				{dropdownOpened && <CategoriesDropdown />}
 			</div>
 			<li className="nav-item">
 				<Link to="/cart">

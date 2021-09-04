@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import NavMenu from "./NavMenu";
 import { CgMenu } from "react-icons/cg";
 
-export default function MobileNavigation({ categories }) {
+export default function MobileNavigation() {
 	const [navMenuOpened, setNavMenuOpened] = useState(false);
 	const [opened, setOpened] = useState("");
 
@@ -22,7 +22,7 @@ export default function MobileNavigation({ categories }) {
 
 			{navMenuOpened && (
 				<div className={"navMenu " + opened}>
-					<NavMenu categories={categories} />
+					<NavMenu />
 				</div>
 			)}
 		</div>

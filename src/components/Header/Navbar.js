@@ -4,7 +4,7 @@ import Navigation from "./Navigation";
 import MobileNavigation from "./MobileNavigation";
 import "./Navbar.scss";
 
-export default function Navbar({ categories }) {
+export default function Navbar() {
 	return (
 		<>
 			<nav className="nav navbar-expand-md">
@@ -17,8 +17,8 @@ export default function Navbar({ categories }) {
 				</div>
 				{/* END NAV BRAND  */}
 
-				<Navigation categories={categories} />
-				<MobileNavigation categories={categories} />
+				<Navigation />
+				<MobileNavigation />
 			</nav>
 		</>
 	);

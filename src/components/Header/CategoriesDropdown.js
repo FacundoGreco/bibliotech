@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
+import { useBooksContext } from "../Contexts/BooksContext";
 import { Link } from "react-router-dom";
 import "./CategoriesDropdown.scss";
 
-export default function CategoriesDropdown({ categories }) {
+export default function CategoriesDropdown() {
+	const { categories } = useBooksContext();
 	const [opened, setOpened] = useState("");
 
 	useEffect(() => {

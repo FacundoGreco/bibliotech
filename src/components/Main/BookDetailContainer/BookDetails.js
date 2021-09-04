@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import DetailsCounter from "./DetailsCounter";
-import "./BookDetails.scss";
 import { useCartContext } from "../../Contexts/CartContext";
+import DetailsCounter from "./DetailsCounter";
 import { Link } from "react-router-dom";
+import "./BookDetails.scss";
 
 export default function BookDetails({ book }) {
 	const { title, description, price, imgUrl, stock } = book;
