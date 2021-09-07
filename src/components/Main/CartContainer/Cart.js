@@ -1,5 +1,6 @@
 import React from "react";
 import { useCartContext } from "../../Contexts/CartContext";
+import NoItemsAdded from "./NoItemsAdded";
 import Item from "./Item";
 import "./Cart.scss";
 
@@ -22,7 +23,7 @@ export default function Cart() {
 					<h4 className="removeColumnShort">Elim.</h4>
 				</div>
 
-				{cartItems &&
+				{cartItems.length > 0 ? (
 					cartItems.map((item) => (
 						<Item
 							key={item.item.id}
@@ -31,7 +32,10 @@ export default function Cart() {
 							stock={item.item.stock}
 							qty={item.qty}
 						/>
-					))}
+					))
+				) : (
+					<NoItemsAdded />
+				)}
 			</div>
 
 			<div className="cartButtons">
