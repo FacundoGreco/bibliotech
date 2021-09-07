@@ -15,6 +15,8 @@ export default function MobileNavigation() {
 				color="black"
 				onClick={() => {
 					setNavMenuOpened(!navMenuOpened);
+
+					//SETS OPENED AFTER A SECOND TO FORCE TRANSITION EFFECT
 					setTimeout(() => {
 						!navMenuOpened ? setMobNavOpened("opened") : setMobNavOpened("");
 					}, 1);

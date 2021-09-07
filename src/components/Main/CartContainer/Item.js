@@ -7,6 +7,7 @@ import "./Item.scss";
 
 export default function Item({ id, title, stock, qty }) {
 	const { updateItemQty, removeItem } = useCartContext();
+
 	const handleUpdateQty = (qty) => {
 		updateItemQty(id, qty);
 	};

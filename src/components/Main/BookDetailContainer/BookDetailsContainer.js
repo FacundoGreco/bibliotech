@@ -11,6 +11,7 @@ export default function BookDetailsContainer() {
 	const [book, setBook] = useState({});
 
 	useEffect(() => {
+		//TRIES TO FIND THE BOOK
 		if (books) {
 			setBook(books.find((book) => book.id === Number(bookId)));
 			!loading && !book ? setNotFound(true) : setNotFound(false);

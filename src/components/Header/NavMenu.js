@@ -11,17 +11,21 @@ export default function NavMenu() {
 
 	return (
 		<ul className="navbar-nav">
-			{/* NAVIGATION  */}
+			{/* HOME */}
 			<li className="nav-item">
 				<NavLink className="nav-link" activeClassName="active" exact to="/" onClick={closeDropdowns}>
 					Inicio
 				</NavLink>
 			</li>
+
+			{/* CONTACT */}
 			<li className="nav-item">
 				<NavLink className="nav-link" activeClassName="active" exact to="/contact" onClick={closeDropdowns}>
 					Contacto
 				</NavLink>
 			</li>
+
+			{/* CATEGORIES */}
 			<div>
 				<li
 					className="nav-item categories"
@@ -33,6 +37,8 @@ export default function NavMenu() {
 				</li>
 				{dropdownOpened && <CategoriesDropdown />}
 			</div>
+
+			{/* CART */}
 			<li className="nav-item">
 				<Link to="/cart" onClick={closeDropdowns}>
 					<CartWidget />

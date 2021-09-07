@@ -22,6 +22,7 @@ export default function BookDetails({ book }) {
 				<div className="bookItemCard">
 					<img src={imgUrl} alt="Carátula" />
 					<div className="bookItemPurchase">
+						{/* CHECKS IF ITEM IS ADDED TO CART */}
 						{!itemAdded ? <DetailsCounter max={stock} handleAddItem={handleAddItem} /> : <GoToCart />}
 
 						<div className="priceAndStock">

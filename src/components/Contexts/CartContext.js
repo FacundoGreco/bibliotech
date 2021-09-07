@@ -1,7 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 
 export const CartContext = createContext();
-
 export const useCartContext = () => useContext(CartContext);
 
 export function CartProvider({ children }) {
@@ -39,6 +38,7 @@ export function CartProvider({ children }) {
 	};
 
 	useEffect(() => {
+		//SAVES CART ITEMS IN LOCAL STORAGE
 		localStorage.setItem("cartItems", JSON.stringify(cartItems));
 	}, [cartItems]);
 

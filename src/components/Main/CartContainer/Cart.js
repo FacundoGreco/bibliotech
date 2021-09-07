@@ -21,6 +21,7 @@ export default function Cart() {
 					<h4 className="removeColumn">Eliminar</h4>
 					<h4 className="removeColumnShort">Elim.</h4>
 				</div>
+
 				{cartItems &&
 					cartItems.map((item) => (
 						<Item

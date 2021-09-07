@@ -9,6 +9,7 @@ export default function CategoriesDropdown() {
 	const { catDropdownOpened, setCatDropdownOpened, closeDropdowns } = useDropdownsContext();
 
 	useEffect(() => {
+		//SETS OPENED AFTER A SECOND TO FORCE TRANSITION EFFECT
 		setTimeout(() => {
 			setCatDropdownOpened("opened");
 		}, 1);

@@ -2,7 +2,6 @@ import React, { createContext, useContext, useEffect, useState } from "react";
 import { getCategories, getBooks } from "../../model/model.js";
 
 export const BooksContext = createContext();
-
 export const useBooksContext = () => useContext(BooksContext);
 
 export function BooksProvider({ children }) {
@@ -12,11 +11,13 @@ export function BooksProvider({ children }) {
 	const [books, setBooks] = useState([]);
 
 	useEffect(() => {
+		//GETS CATEGORIES FROM MODEL
 		getCategories(setCategories).catch((err) => {
 			console.log(err);
 			setError(true);
 		});
 
+		//GETS BOOKS FROM MODEL
 		getBooks(setBooks, setLoading).catch((err) => {
 			console.log(err);
 			setError(true);
