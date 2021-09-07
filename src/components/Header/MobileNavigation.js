@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+import { useDropdownsContext } from "./DropdownsContext";
 import NavMenu from "./NavMenu";
 import { CgMenu } from "react-icons/cg";
 
 export default function MobileNavigation() {
 	const [navMenuOpened, setNavMenuOpened] = useState(false);
-	const [opened, setOpened] = useState("");
+	const { mobNavOpened, setMobNavOpened } = useDropdownsContext();
 
 	return (
 		<div className="mobileNavigation">
@@ -15,13 +16,13 @@ export default function MobileNavigation() {
 				onClick={() => {
 					setNavMenuOpened(!navMenuOpened);
 					setTimeout(() => {
-						!navMenuOpened ? setOpened("opened") : setOpened("");
+						!navMenuOpened ? setMobNavOpened("opened") : setMobNavOpened("");
 					}, 1);
 				}}
 			/>
 
 			{navMenuOpened && (
-				<div className={"navMenu " + opened}>
+				<div className={"navMenu " + mobNavOpened}>
 					<NavMenu />
 				</div>
 			)}

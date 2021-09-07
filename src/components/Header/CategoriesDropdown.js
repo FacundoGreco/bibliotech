@@ -1,25 +1,28 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
+import { useDropdownsContext } from "./DropdownsContext";
 import { useBooksContext } from "../Contexts/BooksContext";
 import { Link } from "react-router-dom";
 import "./CategoriesDropdown.scss";
 
 export default function CategoriesDropdown() {
 	const { categories } = useBooksContext();
-	const [opened, setOpened] = useState("");
+	const { catDropdownOpened, setCatDropdownOpened, closeDropdowns } = useDropdownsContext();
 
 	useEffect(() => {
 		setTimeout(() => {
-			setOpened("opened");
+			setCatDropdownOpened("opened");
 		}, 1);
-	}, []);
+	}, [setCatDropdownOpened]);
 
 	return (
-		<div className={"categoriesDropdown " + opened}>
+		<div className={"categoriesDropdown " + catDropdownOpened}>
 			<ul>
 				{categories &&
 					categories.map((category) => (
 						<li key={category.id} className="category">
-							<Link to={`/categories/${category.id}`}>{category.title}</Link>
+							<Link to={`/categories/${category.id}`} onClick={closeDropdowns}>
+								{category.title}
+							</Link>
 						</li>
 					))}
 			</ul>

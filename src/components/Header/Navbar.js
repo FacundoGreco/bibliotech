@@ -1,4 +1,5 @@
 import React from "react";
+import { DropdownsProvider } from "./DropdownsContext";
 import { Link } from "react-router-dom";
 import Navigation from "./Navigation";
 import MobileNavigation from "./MobileNavigation";
@@ -6,7 +7,7 @@ import "./Navbar.scss";
 
 export default function Navbar() {
 	return (
-		<>
+		<DropdownsProvider>
 			<nav className="nav navbar-expand-md">
 				{/* START NAV BRAND */}
 				<div className="nav__brand">
@@ -20,6 +21,6 @@ export default function Navbar() {
 				<Navigation />
 				<MobileNavigation />
 			</nav>
-		</>
+		</DropdownsProvider>
 	);
 }
