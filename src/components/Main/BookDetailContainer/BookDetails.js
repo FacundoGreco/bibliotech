@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useCartContext } from "../../Contexts/CartContext";
 import DetailsCounter from "./DetailsCounter";
-import { Link } from "react-router-dom";
+import GoToCart from "./GoToCart";
 import "./BookDetails.scss";
 
 export default function BookDetails({ book }) {
@@ -22,16 +22,7 @@ export default function BookDetails({ book }) {
 				<div className="bookItemCard">
 					<img src={imgUrl} alt="Carátula" />
 					<div className="bookItemPurchase">
-						{!itemAdded && <DetailsCounter max={stock} handleAddItem={handleAddItem} />}
-
-						{itemAdded && (
-							<div className="goToCart">
-								<p>Agregado al carrito!</p>
-								<Link to="/cart">
-									<button>Finalizar Compra</button>
-								</Link>
-							</div>
-						)}
+						{!itemAdded ? <DetailsCounter max={stock} handleAddItem={handleAddItem} /> : <GoToCart />}
 
 						<div className="priceAndStock">
 							<p className="price">${price}</p>
