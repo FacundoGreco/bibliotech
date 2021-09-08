@@ -14,7 +14,9 @@ export function CartProvider({ children }) {
 	const addItem = (item, qty) => {
 		if (!isInCart(item.id)) {
 			const cartCopy = [...cartItems];
-			cartCopy.push({ item: item, qty: qty });
+
+			const subtotal = item.price * qty;
+			cartCopy.push({ item: item, qty: qty, subtotal: subtotal });
 
 			setCartItems(cartCopy);
 			setItemsQty(itemsQty + qty);
@@ -25,8 +27,10 @@ export function CartProvider({ children }) {
 		const cartCopy = [...cartItems];
 		const item = cartCopy.find((item) => item.item.id === id);
 		const qty = item.qty;
+		const subtotal = item.item.price * newQty;
 
 		item.qty = newQty;
+		item.subtotal = subtotal;
 
 		setCartItems(cartCopy);
 		setItemsQty(itemsQty - qty + newQty);

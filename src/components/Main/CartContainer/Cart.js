@@ -19,6 +19,8 @@ export default function Cart() {
 					<h4 className="titleColumn">Título</h4>
 					<h4 className="qtyColumn">Cantidad</h4>
 					<h4 className="qtyColumnShort">Cant.</h4>
+					<h4 className="subtotalColumn">Subtotal</h4>
+					<h4 className="subtotalColumnShort">Subt.</h4>
 					<h4 className="removeColumn">Eliminar</h4>
 					<h4 className="removeColumnShort">Elim.</h4>
 				</div>
@@ -31,6 +33,7 @@ export default function Cart() {
 							title={item.item.title}
 							stock={item.item.stock}
 							qty={item.qty}
+							subtotal={item.subtotal}
 						/>
 					))
 				) : (

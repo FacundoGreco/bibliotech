@@ -35,20 +35,23 @@
 
 			.titleColumn {
 				text-align: left;
-				width: 60%;
+				width: 45%;
 			}
 
-			.qtyColumn,
-			.qtyColumnShort {
+			.qtyColumn {
 				width: 20%;
 			}
 
-			.removeColumn,
-			.removeColumnShort {
+			.subtotalColumn {
+				width: 15%;
+			}
+
+			.removeColumn {
 				width: 15%;
 			}
 
 			.qtyColumnShort,
+			.subtotalColumnShort,
 			.removeColumnShort {
 				display: none;
 			}
@@ -75,21 +78,24 @@
 
 		.columns {
 			.qtyColumn,
+			.subtotalColumn,
 			.removeColumn {
 				display: none;
 			}
 
+			.titleColumn {
+				width: 40% !important;
+			}
+
 			.qtyColumnShort,
 			.removeColumnShort {
-				width: 15%;
+				width: 14%;
 				display: block !important;
 			}
-		}
 
-		.item .qtyDiv {
-			width: 15%;
-			.counterContainer {
-				flex-direction: column;
+			.subtotalColumnShort {
+				width: 25%;
+				display: block !important;
 			}
 		}
 	}

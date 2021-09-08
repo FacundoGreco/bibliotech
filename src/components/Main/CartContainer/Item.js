@@ -5,7 +5,7 @@ import { useCartContext } from "../../Contexts/CartContext";
 
 import "./Item.scss";
 
-export default function Item({ id, title, stock, qty }) {
+export default function Item({ id, title, stock, qty, subtotal }) {
 	const { updateItemQty, removeItem } = useCartContext();
 
 	const handleUpdateQty = (qty) => {
@@ -20,6 +20,10 @@ export default function Item({ id, title, stock, qty }) {
 
 			<div className="qtyDiv">
 				<Counter max={stock} qty={qty} setQty={handleUpdateQty} />
+			</div>
+
+			<div className="subtotalDiv">
+				<p>$ {subtotal}</p>
 			</div>
 
 			<div className="removeDiv">

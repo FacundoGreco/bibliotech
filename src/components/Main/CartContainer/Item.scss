@@ -6,15 +6,21 @@
 	text-align: center;
 
 	.titleDiv {
-		width: 60%;
+		width: 45%;
 		text-align: left;
 		h5 {
 			font-size: 16px;
 		}
 	}
+
 	.qtyDiv {
 		width: 20%;
 	}
+
+	.subtotalDiv {
+		width: 15%;
+	}
+
 	.removeDiv {
 		width: 15%;
 
@@ -24,8 +30,37 @@
 	}
 }
 
+@media only screen and (max-width: 576px) {
+	.item {
+		.titleDiv {
+			width: 40%;
+		}
+
+		.qtyDiv,
+		.removeDiv {
+			width: 14%;
+		}
+
+		.subtotalDiv {
+			width: 25%;
+		}
+
+		.counterContainer {
+			flex-direction: column;
+
+			svg {
+				width: 37px;
+				height: 37px;
+			}
+		}
+	}
+}
+
 @media only screen and (max-width: 400px) {
-	.item h5 {
-		font-size: 14px !important;
+	.item {
+		h5,
+		p {
+			font-size: 14px !important;
+		}
 	}
 }
