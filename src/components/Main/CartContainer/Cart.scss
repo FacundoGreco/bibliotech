@@ -20,41 +20,51 @@
 
 	.itemList {
 		@include secondaryStyle();
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
 		padding: 20px;
 		height: 75%;
 		border-radius: 2%;
 		overflow-y: auto;
 		overflow-x: hidden;
 
-		.columns {
-			display: flex;
-			justify-content: space-between;
-			margin-bottom: 30px;
-			font-size: 18px;
-			text-align: center;
+		.list {
+			.columns {
+				display: flex;
+				justify-content: space-between;
+				margin-bottom: 30px;
+				font-size: 18px;
+				text-align: center;
 
-			.titleColumn {
-				text-align: left;
-				width: 45%;
-			}
+				.titleColumn {
+					text-align: left;
+					width: 45%;
+				}
 
-			.qtyColumn {
-				width: 20%;
-			}
+				.qtyColumn {
+					width: 20%;
+				}
 
-			.subtotalColumn {
-				width: 15%;
-			}
+				.subtotalColumn {
+					width: 15%;
+				}
 
-			.removeColumn {
-				width: 15%;
-			}
+				.removeColumn {
+					width: 15%;
+				}
 
-			.qtyColumnShort,
-			.subtotalColumnShort,
-			.removeColumnShort {
-				display: none;
+				.qtyColumnShort,
+				.subtotalColumnShort,
+				.removeColumnShort {
+					display: none;
+				}
 			}
+		}
+
+		.totalDiv {
+			padding-right: 15px;
+			text-align: right;
 		}
 	}
 
@@ -97,6 +107,10 @@
 				width: 25%;
 				display: block !important;
 			}
+		}
+
+		.totalDiv {
+			padding-right: 5px !important;
 		}
 	}
 }

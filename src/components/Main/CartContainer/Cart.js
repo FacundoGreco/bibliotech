@@ -5,7 +5,7 @@ import Item from "./Item";
 import "./Cart.scss";
 
 export default function Cart() {
-	const { clearCart, cartItems } = useCartContext();
+	const { clearCart, cartItems, cartTotal } = useCartContext();
 
 	const handlePay = (e) => {
 		e.preventDefault();
@@ -15,30 +15,36 @@ export default function Cart() {
 		<div className="cart">
 			<h3>Libros Agregados</h3>
 			<div className="itemList">
-				<div className="columns">
-					<h4 className="titleColumn">Título</h4>
-					<h4 className="qtyColumn">Cantidad</h4>
-					<h4 className="qtyColumnShort">Cant.</h4>
-					<h4 className="subtotalColumn">Subtotal</h4>
-					<h4 className="subtotalColumnShort">Subt.</h4>
-					<h4 className="removeColumn">Eliminar</h4>
-					<h4 className="removeColumnShort">Elim.</h4>
+				<div className="list">
+					<div className="columns">
+						<h4 className="titleColumn">Título</h4>
+						<h4 className="qtyColumn">Cantidad</h4>
+						<h4 className="qtyColumnShort">Cant.</h4>
+						<h4 className="subtotalColumn">Subtotal</h4>
+						<h4 className="subtotalColumnShort">Subt.</h4>
+						<h4 className="removeColumn">Eliminar</h4>
+						<h4 className="removeColumnShort">Elim.</h4>
+					</div>
+
+					{cartItems.length > 0 ? (
+						cartItems.map((item) => (
+							<Item
+								key={item.item.id}
+								id={item.item.id}
+								title={item.item.title}
+								stock={item.item.stock}
+								qty={item.qty}
+								subtotal={item.subtotal}
+							/>
+						))
+					) : (
+						<NoItemsAdded />
+					)}
 				</div>
 
-				{cartItems.length > 0 ? (
-					cartItems.map((item) => (
-						<Item
-							key={item.item.id}
-							id={item.item.id}
-							title={item.item.title}
-							stock={item.item.stock}
-							qty={item.qty}
-							subtotal={item.subtotal}
-						/>
-					))
-				) : (
-					<NoItemsAdded />
-				)}
+				<div className="totalDiv">
+					<h4>Total: $ {cartTotal}</h4>
+				</div>
 			</div>
 
 			<div className="cartButtons">
