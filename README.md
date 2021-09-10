@@ -14,9 +14,10 @@ BiblioTech is a book eCommerce for my ReactJS course at CoderHouse.
 ### Cart
 - Cart items are saved in localStorage.
 - Shows items added to card using and Item component.
-- Each item shows its title, quantity, subtotal price (not developed yet) and a remove button.
+- Each item shows its title, quantity, subtotal price and a remove button.
 - The item can be removed from the cart, and its quantity can be updated.
-- It shows total at the bottom (not developed yet).
+- It shows total at the bottom.
+- Payment (not developed yet).
 
 ## Instalation
 
