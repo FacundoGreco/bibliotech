@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./CheckoutForm.scss";
 
-export default function CheckoutForm() {
+export default function CheckoutForm({ generateOrder }) {
 	const [buyer, setBuyer] = useState(
 		JSON.parse(localStorage.getItem("buyer")) || {
 			name: "",
@@ -22,7 +22,8 @@ export default function CheckoutForm() {
 	const handlePay = (e) => {
 		e.preventDefault();
 
-		console.log(buyer);
+		//validate buyer
+		generateOrder(buyer);
 	};
 
 	useEffect(() => {

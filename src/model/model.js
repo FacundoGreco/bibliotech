@@ -39,13 +39,13 @@ async function getBooks(setBooks, setLoading) {
 	}
 }
 
-// async function saveBooks(book) {
-// 	try {
-// 		await db.collection("books").doc().set(book);
-// 	} catch (error) {
-// 		console.log(error);
-// 		throw new Error("El mensaje no se pudo enviar.");
-// 	}
-// }
+async function sendNewOrder(order) {
+	try {
+		await db.collection("orders").add(order);
+	} catch (error) {
+		console.log(error);
+		throw new Error("La orden no se pudo enviar.");
+	}
+}
 
-export { getCategories, getBooks };
+export { getCategories, getBooks, sendNewOrder };
