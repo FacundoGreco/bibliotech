@@ -1,0 +1,20 @@
+.order {
+	height: 200px;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	border: solid white 2px;
+
+	h3 {
+		width: 100%;
+	}
+
+	button {
+		width: 160px;
+		margin-top: 10px;
+		padding: 5px;
+		font-size: 15px;
+	}
+}

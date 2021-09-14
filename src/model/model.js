@@ -39,9 +39,12 @@ async function getBooks(setBooks, setLoading) {
 	}
 }
 
-async function sendNewOrder(order) {
+async function sendNewOrder(order, setOrderId) {
 	try {
-		await db.collection("orders").add(order);
+		await db
+			.collection("orders")
+			.add(order)
+			.then((res) => setOrderId(res.id));
 	} catch (error) {
 		console.log(error);
 		throw new Error("La orden no se pudo enviar.");
