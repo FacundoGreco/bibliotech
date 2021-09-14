@@ -5,7 +5,7 @@ import Item from "./Item";
 import "./Cart.scss";
 
 export default function Cart() {
-	const { clearCart, cartItems, cartTotal } = useCartContext();
+	const { clearCart, cartItems, getCartTotal } = useCartContext();
 
 	const handlePay = (e) => {
 		e.preventDefault();
@@ -43,7 +43,7 @@ export default function Cart() {
 				</div>
 
 				<div className="totalDiv">
-					<h4>Total: $ {cartTotal}</h4>
+					<h4>Total: $ {getCartTotal()}</h4>
 				</div>
 			</div>
 

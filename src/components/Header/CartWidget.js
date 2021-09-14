@@ -3,14 +3,14 @@ import { useCartContext } from "../Contexts/CartContext";
 import "./CartWidget.scss";
 
 export default function CartWidget() {
-	const { itemsQty } = useCartContext();
+	const { getItemsQty } = useCartContext();
 
 	return (
 		<>
-			{itemsQty > 0 && (
+			{getItemsQty() > 0 && (
 				<div className="cartWidget">
 					<img className="cartButton" src={"https://i.ibb.co/vmrYNNp/cart.png"} alt={"Carrito"}></img>
-					<p>{itemsQty}</p>
+					<p>{getItemsQty()}</p>
 				</div>
 			)}
 		</>
