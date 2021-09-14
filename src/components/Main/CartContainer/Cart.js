@@ -1,15 +1,12 @@
 import React from "react";
 import { useCartContext } from "../../Contexts/CartContext";
+import { Link } from "react-router-dom";
 import NoItemsAdded from "./NoItemsAdded";
 import Item from "./Item";
 import "./Cart.scss";
 
 export default function Cart() {
 	const { clearCart, cartItems, getCartTotal } = useCartContext();
-
-	const handlePay = (e) => {
-		e.preventDefault();
-	};
 
 	return (
 		<div className="cart">
@@ -51,9 +48,10 @@ export default function Cart() {
 				<button type="reset" onClick={clearCart}>
 					Limpiar
 				</button>
-				<button type="submit" onClick={handlePay}>
-					Pagar
-				</button>
+
+				<Link to="/checkout">
+					<button type="button">Pagar</button>
+				</Link>
 			</div>
 		</div>
 	);

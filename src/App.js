@@ -4,8 +4,9 @@ import { CartProvider } from "./components/Contexts/CartContext";
 import Navbar from "./components/Header/Navbar";
 import BooksListContainer from "./components/Main/BooksListContainer/BooksListContainer.js";
 import ContactContainer from "./components/Main/ContactContainer/ContactContainer.js";
-import CartContainer from "./components/Main/CartContainer/CartContainer.js";
 import BookDetailsContainer from "./components/Main/BookDetailContainer/BookDetailsContainer";
+import CartContainer from "./components/Main/CartContainer/CartContainer.js";
+import CheckoutContainer from "./components/Main/CheckoutContainer/CheckoutContainer";
 
 import "./global-styles/main.scss";
 
@@ -39,6 +40,10 @@ function App() {
 
 								<Route exact path="/cart">
 									<CartContainer />
+								</Route>
+
+								<Route exact path="/checkout">
+									<CheckoutContainer />
 								</Route>
 
 								<Route path="*">
