@@ -4,7 +4,8 @@ import firebase from "firebase/app";
 import NoItemsAdded from "../CartContainer/NoItemsAdded";
 import CheckoutForm from "./CheckoutForm.js";
 import Order from "./Order.js";
-import { sendNewOrder } from "../../../model/model";
+import ItemsOutOfStock from "./ItemsOutOfStock";
+import { checkItemsStock, sendNewOrder } from "../../../model/model";
 import "./CheckoutContainer.scss";
 
 export default function CheckoutContainer() {
@@ -13,6 +14,7 @@ export default function CheckoutContainer() {
 	const [sendingOrder, setSendingOrder] = useState(false);
 	const [error, setError] = useState(false);
 
+	const [itemsOutOfStock, setItemsOutOfStock] = useState([]);
 	const [orderPayed, setOrderPayed] = useState(false);
 	const [orderId, setOrderId] = useState("");
 
@@ -20,22 +22,29 @@ export default function CheckoutContainer() {
 		try {
 			setSendingOrder(true);
 
+			//MAPS REDUCED ARRAY OF ITEMS IN CART
 			const items = cartItems.map((item) => {
 				return { id: item.item.id, title: item.item.title, qty: item.qty, subtotal: item.subtotal };
 			});
 
-			const order = {
-				buyer: { ...buyer },
-				items: { ...items },
-				date: firebase.firestore.Timestamp.fromDate(new Date()),
-				total: getCartTotal(),
-			};
+			//IF THERE IS STOCK...
+			if (await checkItemsStock(items, setItemsOutOfStock)) {
+				//CREATES ORDER
+				const order = {
+					buyer: { ...buyer },
+					items: { ...items },
+					date: firebase.firestore.Timestamp.fromDate(new Date()),
+					total: getCartTotal(),
+				};
 
-			await sendNewOrder(order, setOrderId);
+				//SENDS ORDER
+				await sendNewOrder(order, setOrderId);
+
+				clearCart();
+				setOrderPayed(true);
+			}
 
 			setSendingOrder(false);
-			clearCart();
-			setOrderPayed(true);
 		} catch (error) {
 			setError(true);
 		}
@@ -47,14 +56,19 @@ export default function CheckoutContainer() {
 
 			<div className="checkoutFormContainer">
 				{/* IF CART IS NOT EMPTY SHOW CHECKOUT FORM */}
-				{getItemsQty() > 0 && !sendingOrder && <CheckoutForm generateOrder={generateOrder} />}
+				{getItemsQty() > 0 && !sendingOrder && itemsOutOfStock.length === 0 && (
+					<CheckoutForm generateOrder={generateOrder} />
+				)}
 
 				{/* NOTIFIES IF ORDER IS BEING SENT OR ERROR OCURRED */}
 				{sendingOrder && <h3>Enviando orden...</h3>}
-				{error && <h3>Se produjo un error al enviar la órden.</h3>}
+				{error && <h3>Se produjo un error al enviar la orden.</h3>}
 
 				{/* CHECKS IF ORDER IS PAYED OR CART IS EMPTY */}
 				{getItemsQty() === 0 && (orderPayed ? <Order orderId={orderId} /> : <NoItemsAdded />)}
+
+				{/* SHOWS ITEMS OUT OF STOCK */}
+				{itemsOutOfStock.length > 0 && <ItemsOutOfStock itemsOutOfStock={itemsOutOfStock} />}
 			</div>
 		</div>
 	);

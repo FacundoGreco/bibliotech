@@ -39,6 +39,46 @@ async function getBooks(setBooks, setLoading) {
 	}
 }
 
+async function checkItemsStock(items, setItemsOutOfStock) {
+	try {
+		const itemsOutOfStock = [];
+		const batch = db.batch();
+
+		//GETS QUERY OF ITEMS IN CART
+		const itemsToUpdateQuery = await db
+			.collection("books")
+			.where(
+				"id",
+				"in",
+				items.map((item) => item.id)
+			)
+			.get();
+
+		//UPDATES BATCH OR PUSH OUT OF STOCK ITEM
+		itemsToUpdateQuery.docs.forEach((doc) => {
+			const { qty, title } = items.find((item) => item.id === doc.data().id);
+
+			if (doc.data().stock >= qty) {
+				batch.update(doc.ref, { stock: doc.data().stock - qty });
+			} else {
+				itemsOutOfStock.push(title);
+			}
+		});
+
+		//IF THERE IS STOCK FOR EVERY ITEM, COMMITS BATCH
+		if (itemsOutOfStock.length === 0) {
+			batch.commit();
+			return true;
+		} else {
+			setItemsOutOfStock(itemsOutOfStock);
+			return false;
+		}
+	} catch (error) {
+		console.log(error);
+		throw new Error("No se pudo checkear el stock.");
+	}
+}
+
 async function sendNewOrder(order, setOrderId) {
 	try {
 		await db
@@ -51,4 +91,4 @@ async function sendNewOrder(order, setOrderId) {
 	}
 }
 
-export { getCategories, getBooks, sendNewOrder };
+export { getCategories, getBooks, checkItemsStock, sendNewOrder };
