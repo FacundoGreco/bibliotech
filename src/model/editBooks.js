@@ -5,7 +5,7 @@ db.collection("books")
 	.then((querySnapshot) => {
 		querySnapshot.forEach((doc) => {
 			const title = doc.title;
-			console.log(doc.title);
+
 			db.collection("books")
 				.doc(doc.id)
 				.update({
