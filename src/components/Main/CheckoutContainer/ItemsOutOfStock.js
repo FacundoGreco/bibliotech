@@ -8,8 +8,8 @@ export default function ItemsOutOfStock({ itemsOutOfStock }) {
 			<h3>No hay stock suficiente para estos libros.</h3>
 
 			<div className="outOfStockList">
-				{itemsOutOfStock.map((item, i) => (
-					<li key={i}>{item}</li>
+				{itemsOutOfStock.map((item) => (
+					<li key={item.id}>{item.title}</li>
 				))}
 			</div>
 

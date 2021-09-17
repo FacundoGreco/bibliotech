@@ -19,7 +19,7 @@ export default function Item({ id, title, stock, qty, subtotal }) {
 			</div>
 
 			<div className="qtyDiv">
-				<Counter max={stock} qty={qty} setQty={handleUpdateQty} />
+				<Counter max={stock} qty={qty <= stock ? qty : stock} setQty={handleUpdateQty} />
 			</div>
 
 			<div className="subtotalDiv">

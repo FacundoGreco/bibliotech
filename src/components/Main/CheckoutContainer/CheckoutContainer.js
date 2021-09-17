@@ -9,7 +9,7 @@ import { checkItemsStock, sendNewOrder } from "../../../model/model";
 import "./CheckoutContainer.scss";
 
 export default function CheckoutContainer() {
-	const { getItemsQty, clearCart, cartItems, getCartTotal } = useCartContext();
+	const { getItemsQty, clearCart, cartItems, getCartTotal, updateItemStock } = useCartContext();
 
 	const [sendingOrder, setSendingOrder] = useState(false);
 	const [error, setError] = useState(false);
@@ -28,7 +28,7 @@ export default function CheckoutContainer() {
 			});
 
 			//IF THERE IS STOCK...
-			if (await checkItemsStock(items, setItemsOutOfStock)) {
+			if (await checkItemsStock(items, setItemsOutOfStock, updateItemStock)) {
 				//CREATES ORDER
 				const order = {
 					buyer: { ...buyer },

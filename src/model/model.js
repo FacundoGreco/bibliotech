@@ -39,7 +39,7 @@ async function getBooks(setBooks, setLoading) {
 	}
 }
 
-async function checkItemsStock(items, setItemsOutOfStock) {
+async function checkItemsStock(items, setItemsOutOfStock, updateItemStock) {
 	try {
 		const itemsOutOfStock = [];
 		const batch = db.batch();
@@ -56,12 +56,12 @@ async function checkItemsStock(items, setItemsOutOfStock) {
 
 		//UPDATES BATCH OR PUSH OUT OF STOCK ITEM
 		itemsToUpdateQuery.docs.forEach((doc) => {
-			const { qty, title } = items.find((item) => item.id === doc.data().id);
+			const { id, qty, title } = items.find((item) => item.id === doc.data().id);
 
 			if (doc.data().stock >= qty) {
 				batch.update(doc.ref, { stock: doc.data().stock - qty });
 			} else {
-				itemsOutOfStock.push(title);
+				itemsOutOfStock.push({ id: id, title: title, stock: doc.data().stock });
 			}
 		});
 
@@ -71,6 +71,7 @@ async function checkItemsStock(items, setItemsOutOfStock) {
 			return true;
 		} else {
 			setItemsOutOfStock(itemsOutOfStock);
+			itemsOutOfStock.forEach((item) => updateItemStock(item.id, item.stock));
 			return false;
 		}
 	} catch (error) {
