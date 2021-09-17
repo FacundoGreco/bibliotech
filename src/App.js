@@ -4,7 +4,7 @@ import { CartProvider } from "./components/Contexts/CartContext";
 import Navbar from "./components/Header/Navbar";
 import BooksListContainer from "./components/Main/BooksListContainer/BooksListContainer.js";
 import ContactContainer from "./components/Main/ContactContainer/ContactContainer.js";
-import BookDetailsContainer from "./components/Main/BookDetailContainer/BookDetailsContainer";
+import BookDetailsContainer from "./components/Main/BookDetailsContainer/BookDetailsContainer";
 import CartContainer from "./components/Main/CartContainer/CartContainer.js";
 import CheckoutContainer from "./components/Main/CheckoutContainer/CheckoutContainer";
 
