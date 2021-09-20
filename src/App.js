@@ -9,6 +9,7 @@ import CartContainer from "./components/Main/CartContainer/CartContainer.js";
 import CheckoutContainer from "./components/Main/CheckoutContainer/CheckoutContainer";
 
 import "./global-styles/main.scss";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
 	return (
@@ -16,6 +17,7 @@ function App() {
 			<CartProvider>
 				<div className="App">
 					<BrowserRouter>
+						<ScrollToTop />
 						<header className={"header fixed-top"}>
 							<Navbar />
 						</header>
