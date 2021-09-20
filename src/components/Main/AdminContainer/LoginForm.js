@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./LoginForm.scss";
 
-export default function LoginForm() {
+export default function LoginForm({ handleLogin }) {
 	const [user, setUser] = useState({ username: "", password: "" });
 
 	const handleChange = (e) => {
@@ -13,12 +13,13 @@ export default function LoginForm() {
 		});
 	};
 
-	const handleLogin = (e) => {
-		e.preventDefault();
-	};
-
 	return (
-		<form className="loginForm" onSubmit={handleLogin}>
+		<form
+			className="loginForm"
+			onSubmit={(e) => {
+				handleLogin(e, user);
+			}}
+		>
 			<div className="inputsContainer">
 				<fieldset>
 					<label htmlFor="username">Usuario</label>

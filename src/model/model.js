@@ -92,4 +92,23 @@ async function sendNewOrder(order, setOrderId) {
 	}
 }
 
-export { getCategories, getBooks, checkItemsStock, sendNewOrder };
+async function validateAdmin({ username, password }) {
+	try {
+		const user = await db
+			.collection("admins")
+			.where("username", "==", username)
+			.where("password", "==", password)
+			.get();
+
+		if (user.docs[0]) {
+			return true;
+		} else {
+			return false;
+		}
+	} catch (error) {
+		console.log(error);
+		throw new Error("El usuario no se pudo validar.");
+	}
+}
+
+export { getCategories, getBooks, checkItemsStock, sendNewOrder, validateAdmin };
