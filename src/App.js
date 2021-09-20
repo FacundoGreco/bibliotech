@@ -1,15 +1,16 @@
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { BooksProvider } from "./components/Contexts/BooksContext";
 import { CartProvider } from "./components/Contexts/CartContext";
+import ScrollToTop from "./components/ScrollToTop";
 import Navbar from "./components/Header/Navbar";
 import BooksListContainer from "./components/Main/BooksListContainer/BooksListContainer.js";
 import ContactContainer from "./components/Main/ContactContainer/ContactContainer.js";
 import BookDetailsContainer from "./components/Main/BookDetailsContainer/BookDetailsContainer";
 import CartContainer from "./components/Main/CartContainer/CartContainer.js";
 import CheckoutContainer from "./components/Main/CheckoutContainer/CheckoutContainer";
+import AdminContainer from "./components/Main/AdminContainer/AdminContainer";
 
 import "./global-styles/main.scss";
-import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
 	return (
@@ -46,6 +47,10 @@ function App() {
 
 								<Route exact path="/checkout">
 									<CheckoutContainer />
+								</Route>
+
+								<Route exact path="/admin">
+									<AdminContainer />
 								</Route>
 
 								<Route path="*">
