@@ -38,10 +38,10 @@ $font: "Roboto Slab", serif;
 
 @mixin container {
 	@include secondaryStyle();
+	flex-grow: 1;
 	text-align: left;
 	position: relative;
 	width: 100%;
-	min-height: 90vh;
 	padding: 20px 20px;
 
 	h2 {
