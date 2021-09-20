@@ -1,19 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { useBooksContext } from "../../Contexts/BooksContext";
 import BooksList from "./BooksList";
 import "./BooksListContainer.scss";
-import { getBooks } from "../../../model/model.js";
 
-export default function BooksListContainer({ categories, err }) {
-	const [loading, setLoading] = useState(true);
-	const [error, setError] = useState(err);
-	const [books, setBooks] = useState([]);
-
-	useEffect(() => {
-		getBooks(setBooks, setLoading).catch((err) => {
-			console.log(err);
-			setError(true);
-		});
-	}, []);
+export default function BooksListContainer() {
+	const { loading, error, categories, books } = useBooksContext();
 
 	return (
 		<div className={"booksListContainer"}>
@@ -21,7 +12,7 @@ export default function BooksListContainer({ categories, err }) {
 
 			{loading && <h3>Cargando libros...</h3>}
 			{error && <h3>Error al cargar libros.</h3>}
-			{!loading && categories && books && <BooksList categories={categories} books={books} />}
+			{!loading && categories && books && <BooksList />}
 		</div>
 	);
 }

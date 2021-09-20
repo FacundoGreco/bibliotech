@@ -1,0 +1,10 @@
+@import "/src/global-styles/operators.scss";
+
+.checkoutForm {
+	@include form();
+
+	fieldset p {
+		font-size: 14px;
+		color: rgb(221, 0, 0);
+	}
+}

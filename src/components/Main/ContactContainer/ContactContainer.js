@@ -1,7 +1,7 @@
 import React from "react";
-import "./ContactContainer.scss";
 import RequestBookForm from "./RequestBookForm.js";
 import InquiryForm from "./InquiryForm.js";
+import "./ContactContainer.scss";
 
 export default function ContactContainer() {
 	return (
@@ -10,7 +10,6 @@ export default function ContactContainer() {
 
 			<div className="contactFormsContainer">
 				<RequestBookForm />
-
 				<InquiryForm />
 			</div>
 		</div>

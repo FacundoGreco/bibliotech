@@ -1,0 +1,51 @@
+.itemsOutOfStock {
+	width: 95%;
+	max-width: 400px;
+	min-height: 200px;
+	max-height: 515px;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	border: solid white 2px;
+
+	h3 {
+		width: 100%;
+		margin-bottom: 20px;
+		font-size: 18px;
+	}
+
+	.outOfStockList {
+		width: 100%;
+		overflow-y: auto;
+
+		li {
+			padding: 4px;
+			margin-bottom: 15px;
+			// border-left: solid white 2px;
+			border-bottom: solid white 2px;
+		}
+	}
+
+	button {
+		width: 160px;
+		margin-top: 20px;
+		padding: 5px;
+		font-size: 15px;
+	}
+}
+
+@media only screen and (max-width: 500px) {
+	.itemsOutOfStock {
+		padding: 15px 10px;
+
+		h3 {
+			font-size: 18px;
+		}
+
+		.outOfStockList li {
+			font-size: 14px;
+		}
+	}
+}

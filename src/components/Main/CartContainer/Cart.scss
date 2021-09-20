@@ -20,38 +20,51 @@
 
 	.itemList {
 		@include secondaryStyle();
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
 		padding: 20px;
 		height: 75%;
 		border-radius: 2%;
 		overflow-y: auto;
 		overflow-x: hidden;
 
-		.columns {
-			display: flex;
-			justify-content: space-between;
-			margin-bottom: 30px;
-			font-size: 18px;
-			text-align: center;
+		.list {
+			.columns {
+				display: flex;
+				justify-content: space-between;
+				margin-bottom: 30px;
+				font-size: 18px;
+				text-align: center;
 
-			.titleColumn {
-				text-align: left;
-				width: 60%;
-			}
+				.titleColumn {
+					text-align: left;
+					width: 45%;
+				}
 
-			.qtyColumn,
-			.qtyColumnShort {
-				width: 20%;
-			}
+				.qtyColumn {
+					width: 20%;
+				}
 
-			.removeColumn,
-			.removeColumnShort {
-				width: 15%;
-			}
+				.subtotalColumn {
+					width: 15%;
+				}
 
-			.qtyColumnShort,
-			.removeColumnShort {
-				display: none;
+				.removeColumn {
+					width: 15%;
+				}
+
+				.qtyColumnShort,
+				.subtotalColumnShort,
+				.removeColumnShort {
+					display: none;
+				}
 			}
+		}
+
+		.totalDiv {
+			padding-right: 15px;
+			text-align: right;
 		}
 	}
 
@@ -75,22 +88,29 @@
 
 		.columns {
 			.qtyColumn,
+			.subtotalColumn,
 			.removeColumn {
 				display: none;
 			}
 
+			.titleColumn {
+				width: 40% !important;
+			}
+
 			.qtyColumnShort,
 			.removeColumnShort {
-				width: 15%;
+				width: 14%;
+				display: block !important;
+			}
+
+			.subtotalColumnShort {
+				width: 25%;
 				display: block !important;
 			}
 		}
 
-		.item .qtyDiv {
-			width: 15%;
-			.counterContainer {
-				flex-direction: column;
-			}
+		.totalDiv {
+			padding-right: 5px !important;
 		}
 	}
 }

@@ -1,7 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 
 export const CartContext = createContext();
-
 export const useCartContext = () => useContext(CartContext);
 
 export function CartProvider({ children }) {
@@ -11,18 +10,40 @@ export function CartProvider({ children }) {
 		return cartItems.some((item) => item.item.id === id);
 	};
 
+	const getItemsQty = () => {
+		return cartItems.reduce((acc, item) => acc + item.qty, 0);
+	};
+
+	const getCartTotal = () => {
+		return cartItems.reduce((acc, item) => acc + item.item.price * item.qty, 0);
+	};
+
 	const addItem = (item, qty) => {
 		if (!isInCart(item.id)) {
 			const cartCopy = [...cartItems];
-			cartCopy.push({ item: item, qty: qty });
+
+			const subtotal = item.price * qty;
+			cartCopy.push({ item: item, qty: qty, subtotal: subtotal });
 
 			setCartItems(cartCopy);
 		}
 	};
 
-	const updateItemQty = (id, qty) => {
+	const updateItemStock = (id, newStock) => {
 		const cartCopy = [...cartItems];
-		cartCopy.find((item) => item.item.id === id).qty = qty;
+		const item = cartCopy.find((item) => item.item.id === id);
+
+		item.item.stock = newStock;
+		setCartItems(cartCopy);
+	};
+
+	const updateItemQty = (id, newQty) => {
+		const cartCopy = [...cartItems];
+		const item = cartCopy.find((item) => item.item.id === id);
+		const newSubtotal = item.item.price * newQty;
+
+		item.qty = newQty;
+		item.subtotal = newSubtotal;
 
 		setCartItems(cartCopy);
 	};
@@ -39,11 +60,24 @@ export function CartProvider({ children }) {
 	};
 
 	useEffect(() => {
+		//SAVES CART ITEMS IN LOCAL STORAGE
 		localStorage.setItem("cartItems", JSON.stringify(cartItems));
 	}, [cartItems]);
 
 	return (
-		<CartContext.Provider value={{ cartItems, isInCart, addItem, updateItemQty, removeItem, clearCart }}>
+		<CartContext.Provider
+			value={{
+				cartItems,
+				isInCart,
+				getItemsQty,
+				getCartTotal,
+				addItem,
+				updateItemStock,
+				updateItemQty,
+				removeItem,
+				clearCart,
+			}}
+		>
 			{children}
 		</CartContext.Provider>
 	);

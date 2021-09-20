@@ -1,19 +1,23 @@
 import React, { useState } from "react";
-import DetailsCounter from "./DetailsCounter";
-import "./BookDetails.scss";
 import { useCartContext } from "../../Contexts/CartContext";
-import { Link } from "react-router-dom";
+import DetailsCounter from "./DetailsCounter";
+import GoToCart from "./GoToCart";
+import "./BookDetails.scss";
+import { useEffect } from "react";
 
 export default function BookDetails({ book }) {
 	const { title, description, price, imgUrl, stock } = book;
 	const { addItem, isInCart } = useCartContext();
-
-	const [itemAdded, setItemAdded] = useState(isInCart(book.id));
+	const [itemAdded, setItemAdded] = useState(false);
 
 	const handleAddItem = (qty) => {
 		addItem(book, qty);
 		setItemAdded(true);
 	};
+
+	useEffect(() => {
+		setItemAdded(isInCart(book.id));
+	}, [book, isInCart]);
 
 	return (
 		<div className="bookDetails">
@@ -22,16 +26,8 @@ export default function BookDetails({ book }) {
 				<div className="bookItemCard">
 					<img src={imgUrl} alt="Carátula" />
 					<div className="bookItemPurchase">
-						{!itemAdded && <DetailsCounter max={stock} handleAddItem={handleAddItem} />}
-
-						{itemAdded && (
-							<div className="goToCart">
-								<p>Agregado al carrito!</p>
-								<Link to="/cart">
-									<button>Finalizar Compra</button>
-								</Link>
-							</div>
-						)}
+						{/* CHECKS IF ITEM IS ADDED TO CART */}
+						{!itemAdded ? <DetailsCounter max={stock} handleAddItem={handleAddItem} /> : <GoToCart />}
 
 						<div className="priceAndStock">
 							<p className="price">${price}</p>

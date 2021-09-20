@@ -1,23 +1,18 @@
 import React from "react";
+import { useBooksContext } from "../../Contexts/BooksContext";
 import { useParams } from "react-router-dom";
 import Book from "./Book";
 import Category from "./Category";
 
-export default function BooksList({ categories, books }) {
+export default function BooksList() {
+	const { categories, books } = useBooksContext();
 	const { categoryId } = useParams();
 
 	const getBooksSortedByCategory = (category) => {
 		return books
 			.filter((book) => book.category === category)
 			.map((book) => (
-				<Book
-					id={book.id}
-					title={book.title}
-					description={book.description}
-					price={book.price}
-					imgUrl={book.imgUrl}
-					key={book.id}
-				/>
+				<Book id={book.id} title={book.title} price={book.price} imgUrl={book.imgUrl} key={book.id} />
 			));
 	};
 
