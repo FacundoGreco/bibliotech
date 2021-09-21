@@ -1,91 +1,60 @@
 @import "/src/global-styles/operators.scss";
 
 .cart {
-	@include primaryStyle();
-	@include modernContainer();
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	padding: 10px 15px;
-	width: 98%;
-	max-width: 700px;
-	height: 600px;
+	@include panel();
 
-	h3 {
-		@include secondaryStyle();
-		padding: 10px 0;
-		font-size: 22px;
-		text-align: center;
-	}
+	.itemList .list {
+		.columns {
+			display: flex;
+			justify-content: space-between;
+			margin-bottom: 30px;
+			font-size: 18px;
+			text-align: center;
 
-	.itemList {
-		@include secondaryStyle();
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-		padding: 20px;
-		height: 75%;
-		border-radius: 2%;
-		overflow-y: auto;
-		overflow-x: hidden;
+			.titleColumn {
+				text-align: left;
+				width: 45%;
+			}
 
-		.list {
-			.columns {
-				display: flex;
-				justify-content: space-between;
-				margin-bottom: 30px;
-				font-size: 18px;
-				text-align: center;
+			.qtyColumn {
+				width: 20%;
+			}
 
-				.titleColumn {
-					text-align: left;
-					width: 45%;
-				}
+			.subtotalColumn {
+				width: 15%;
+			}
 
-				.qtyColumn {
-					width: 20%;
-				}
+			.removeColumn {
+				width: 15%;
+			}
 
-				.subtotalColumn {
-					width: 15%;
-				}
-
-				.removeColumn {
-					width: 15%;
-				}
-
-				.qtyColumnShort,
-				.subtotalColumnShort,
-				.removeColumnShort {
-					display: none;
-				}
+			.qtyColumnShort,
+			.subtotalColumnShort,
+			.removeColumnShort {
+				display: none;
 			}
 		}
+	}
 
-		.totalDiv {
-			padding-right: 15px;
-			text-align: right;
-		}
+	.totalDiv {
+		padding-right: 15px;
+		text-align: right;
 	}
 
 	.cartButtons {
 		display: flex;
 		justify-content: space-around;
+		width: 100%;
+		max-width: 500px;
 
 		button {
-			@include secondaryStyle();
 			width: 100px;
-			height: 40px;
-			font-size: 20px;
-			border: solid black;
 		}
 	}
 }
 
 @media only screen and (max-width: 576px) {
 	.itemList {
-		padding: 15px 10px !important;
-
 		.columns {
 			.qtyColumn,
 			.subtotalColumn,
@@ -111,20 +80,6 @@
 
 		.totalDiv {
 			padding-right: 5px !important;
-		}
-	}
-}
-
-@media only screen and (max-width: 400px) {
-	.cart {
-		h3 {
-			font-size: 20px;
-		}
-
-		.itemList {
-			h4 {
-				font-size: 16px;
-			}
 		}
 	}
 }

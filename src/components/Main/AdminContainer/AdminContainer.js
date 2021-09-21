@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import LoginForm from "./LoginForm";
 import { validateAdmin } from "../../../model/model";
+import LoginForm from "./LoginForm";
+import StockPanel from "./StockPanel";
 
 import "./AdminContainer.scss";
 
@@ -31,7 +32,7 @@ export default function AdminContainer() {
 				{!loading && !adminLogged && <LoginForm handleLogin={handleLogin} />}
 				{loading && <h3>Validando...</h3>}
 				{error && <h3>Se produjo un error...</h3>}
-				{!loading && adminLogged && <h3>Logueado!</h3>}
+				{!loading && adminLogged && <StockPanel></StockPanel>}
 			</div>
 		</div>
 	);

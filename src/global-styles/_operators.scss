@@ -146,3 +146,62 @@ $font: "Roboto Slab", serif;
 		}
 	}
 }
+
+@mixin panel {
+	@include primaryStyle();
+	@include modernContainer();
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px 15px;
+	width: 98%;
+	max-width: 700px;
+	height: 600px;
+
+	h3 {
+		@include secondaryStyle();
+		padding: 10px 0;
+		font-size: 22px;
+		text-align: center;
+		width: 100%;
+	}
+
+	.itemList {
+		@include secondaryStyle();
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		padding: 20px;
+		height: 75%;
+		width: 100%;
+		border-radius: 2%;
+		overflow-y: auto;
+		overflow-x: hidden;
+	}
+
+	button {
+		@include secondaryStyle();
+		height: 40px;
+		font-size: 20px;
+		border: solid black;
+	}
+
+	@media (max-width: 576px) {
+		.itemList {
+			padding: 15px 10px !important;
+		}
+	}
+
+	@media (max-width: 400) {
+		h3 {
+			font-size: 20px;
+		}
+
+		.itemList {
+			h4 {
+				font-size: 16px;
+			}
+		}
+	}
+}

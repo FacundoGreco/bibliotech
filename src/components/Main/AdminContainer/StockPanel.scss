@@ -1,0 +1,9 @@
+@import "/src/global-styles/operators.scss";
+
+.stockPanel {
+	@include panel();
+
+	button {
+		width: 140px;
+	}
+}
