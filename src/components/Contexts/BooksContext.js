@@ -5,17 +5,35 @@ export const BooksContext = createContext();
 export const useBooksContext = () => useContext(BooksContext);
 
 export function BooksProvider({ children }) {
+	//CATEGORIES AND BOOKS
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(false);
 	const [categories, setCategories] = useState([]);
 	const [books, setBooks] = useState([]);
 
+	//STOCK
+	const [stockError, setStockError] = useState(false);
+	const [updatingStock, setUpdatingStock] = useState(false);
+	const [stockUpdated, setStockUpdated] = useState(false);
+
 	async function loadStock(booksToSend) {
 		try {
-			booksToSend.forEach(async (book) => {
-				await setItemStock(book.id, book.stock);
-			});
-		} catch (error) {}
+			setUpdatingStock(true);
+			setStockUpdated(false);
+
+			await Promise.all(
+				booksToSend.map(async (book) => {
+					await setItemStock(book.id, book.stock);
+				})
+			);
+
+			setUpdatingStock(false);
+			setStockUpdated(true);
+		} catch (err) {
+			console.log(err.message);
+			setUpdatingStock(false);
+			setStockError(true);
+		}
 	}
 
 	useEffect(() => {
@@ -33,7 +51,9 @@ export function BooksProvider({ children }) {
 	}, []);
 
 	return (
-		<BooksContext.Provider value={{ loading, error, categories, books, loadStock }}>
+		<BooksContext.Provider
+			value={{ loading, error, categories, books, loadStock, updatingStock, stockError, stockUpdated }}
+		>
 			{children}
 		</BooksContext.Provider>
 	);
