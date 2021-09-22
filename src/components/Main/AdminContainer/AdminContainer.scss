@@ -1,0 +1,14 @@
+@import "/src/global-styles/operators.scss";
+
+.adminContainer {
+	@include container();
+	display: flex;
+	flex-flow: column;
+
+	.adminPanels {
+		flex-grow: 1;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}

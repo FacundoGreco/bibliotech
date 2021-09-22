@@ -1,0 +1,59 @@
+.item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 20px;
+
+	.titleDiv {
+		width: 68%;
+		text-align: left;
+		h4 {
+			font-size: 18px;
+		}
+	}
+
+	.stockDiv {
+		display: flex;
+		justify-content: flex-end;
+		width: 25%;
+
+		input {
+			width: 70px;
+			height: 30px;
+			font-size: 17px;
+		}
+	}
+}
+
+@media only screen and (max-width: 576px) {
+	.item {
+		.titleDiv {
+			h4 {
+				font-size: 16px;
+			}
+		}
+
+		.stockDiv {
+			input {
+				width: 60px;
+				font-size: 15px;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 400px) {
+	.item {
+		.titleDiv {
+			h4 {
+				font-size: 15px !important;
+			}
+		}
+		.stockDiv {
+			input {
+				width: 50px;
+				font-size: 14px !important;
+			}
+		}
+	}
+}

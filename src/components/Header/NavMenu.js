@@ -3,6 +3,7 @@ import { useDropdownsContext } from "./DropdownsContext";
 import { Link, NavLink } from "react-router-dom";
 import CartWidget from "./CartWidget";
 import CategoriesDropdown from "./CategoriesDropdown";
+
 import "./NavMenu.scss";
 
 export default function NavMenu() {
@@ -37,6 +38,13 @@ export default function NavMenu() {
 				</li>
 				{dropdownOpened && <CategoriesDropdown />}
 			</div>
+
+			{/* ADMIN */}
+			<li className="nav-item">
+				<Link to="/admin" onClick={closeDropdowns}>
+					Login
+				</Link>
+			</li>
 
 			{/* CART */}
 			<li className="nav-item">

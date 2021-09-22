@@ -1,0 +1,11 @@
+@import "/src/global-styles/operators.scss";
+
+.loginForm {
+	@include form();
+
+	height: 250px;
+
+	.inputsContainer {
+		height: 90%;
+	}
+}
