@@ -39,7 +39,9 @@ export default function StockPanel() {
 
 			{stockUpdated && <h4>Stock Cargado!</h4>}
 
-			<button type="submit">Cargar Stock</button>
+			<button disabled={stockError || updatingStock} type="submit">
+				Cargar Stock
+			</button>
 		</form>
 	);
 }
