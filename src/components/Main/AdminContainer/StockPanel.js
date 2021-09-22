@@ -5,10 +5,8 @@ import Item from "./Item";
 import "./StockPanel.scss";
 
 export default function StockPanel() {
-	const { books } = useBooksContext();
+	const { books, loadStock } = useBooksContext();
 	const [booksToSend, setBooksToSend] = useState([...books]);
-
-	console.log(booksToSend);
 
 	const changeStock = (id, stock) => {
 		const booksCopy = [...booksToSend];
@@ -20,6 +18,10 @@ export default function StockPanel() {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
+
+		try {
+			loadStock(booksToSend);
+		} catch (error) {}
 	};
 
 	return (

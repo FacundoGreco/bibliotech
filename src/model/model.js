@@ -111,4 +111,13 @@ async function validateAdmin({ username, password }) {
 	}
 }
 
-export { getCategories, getBooks, checkItemsStock, sendNewOrder, validateAdmin };
+async function setItemStock(id, stock) {
+	try {
+		const item = await db.collection("books").where("id", "==", id).get();
+		await item.docs[0].ref.update({ stock: stock });
+	} catch (error) {
+		console.log(error);
+		throw new Error(`No se pudo actualizar el stock de ${id}.`);
+	}
+}
+export { getCategories, getBooks, checkItemsStock, sendNewOrder, validateAdmin, setItemStock };

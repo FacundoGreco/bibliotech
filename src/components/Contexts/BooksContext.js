@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
-import { getCategories, getBooks } from "../../model/model.js";
+import { getCategories, getBooks, setItemStock } from "../../model/model.js";
 
 export const BooksContext = createContext();
 export const useBooksContext = () => useContext(BooksContext);
@@ -9,6 +9,14 @@ export function BooksProvider({ children }) {
 	const [error, setError] = useState(false);
 	const [categories, setCategories] = useState([]);
 	const [books, setBooks] = useState([]);
+
+	async function loadStock(booksToSend) {
+		try {
+			booksToSend.forEach(async (book) => {
+				await setItemStock(book.id, book.stock);
+			});
+		} catch (error) {}
+	}
 
 	useEffect(() => {
 		//GETS CATEGORIES FROM MODEL
@@ -24,5 +32,9 @@ export function BooksProvider({ children }) {
 		});
 	}, []);
 
-	return <BooksContext.Provider value={{ loading, error, categories, books }}>{children}</BooksContext.Provider>;
+	return (
+		<BooksContext.Provider value={{ loading, error, categories, books, loadStock }}>
+			{children}
+		</BooksContext.Provider>
+	);
 }
