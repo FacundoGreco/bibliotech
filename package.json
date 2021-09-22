@@ -16,7 +16,7 @@
 		"react-scripts": "4.0.3",
 		"web-vitals": "^1.1.2"
 	},
-	"homepage": "https://facundogreco.github.io/",
+	"homepage": "https://facundogreco.github.io/bibliotech/",
 	"scripts": {
 		"predeploy": "npm run build",
 		"deploy": "gh-pages -d build",

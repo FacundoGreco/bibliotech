@@ -29,6 +29,10 @@ function App() {
 									<BooksListContainer />
 								</Route>
 
+								<Route exact path="/bibliotech">
+									<BooksListContainer />
+								</Route>
+
 								<Route exact path="/categories/:categoryId">
 									<BooksListContainer />
 								</Route>
