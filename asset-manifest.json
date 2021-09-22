@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/bibliotech/static/css/main.1978a6af.chunk.css",
-    "main.js": "/bibliotech/static/js/main.2f06c9df.chunk.js",
-    "main.js.map": "/bibliotech/static/js/main.2f06c9df.chunk.js.map",
+    "main.js": "/bibliotech/static/js/main.c3c4aeca.chunk.js",
+    "main.js.map": "/bibliotech/static/js/main.c3c4aeca.chunk.js.map",
     "runtime-main.js": "/bibliotech/static/js/runtime-main.180b0315.js",
     "runtime-main.js.map": "/bibliotech/static/js/runtime-main.180b0315.js.map",
     "static/js/2.359607f9.chunk.js": "/bibliotech/static/js/2.359607f9.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.180b0315.js",
     "static/js/2.359607f9.chunk.js",
     "static/css/main.1978a6af.chunk.css",
-    "static/js/main.2f06c9df.chunk.js"
+    "static/js/main.c3c4aeca.chunk.js"
   ]
 }
