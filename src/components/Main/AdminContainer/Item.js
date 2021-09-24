@@ -5,7 +5,7 @@ export default function Item({ book, changeStock }) {
 	const [stock, setStock] = useState(book.stock);
 
 	const handleChange = (e) => {
-		const stock = e.target.value;
+		const stock = Number(e.target.value);
 		setStock(stock);
 		changeStock(book.id, stock);
 	};
